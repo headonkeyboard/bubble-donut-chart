@@ -105,10 +105,7 @@ class BubbleDonut {
 
     const endAngle = startAngle + ratio * 2 * Math.PI;
 
-    const sectionDiffAngle = endAngle - startAngle;
-    const arcSectionPerimeter = sectionDiffAngle* this.outerRadius;
-
-    const gridLength = arcSectionPerimeter / 10;
+    const gridLength = Math.min(Math.max(bubbles.length, 10), 100);
 
     const gridEdges: GridEdges = {
       top: [],

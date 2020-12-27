@@ -1,4 +1,4 @@
-import {ChangeEvent, FunctionComponent, useCallback, useRef, useState} from "react";
+import {ChangeEvent, FunctionComponent, useCallback, useRef} from "react";
 import {Section} from "../models";
 
 type BubbleDonutBuilderSectionProps = {
@@ -11,33 +11,16 @@ const BubbleDonutBuilderSection: FunctionComponent<BubbleDonutBuilderSectionProp
     const section = useRef<Section>(defaultSection);
 
     const handleSliderChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
-        section.current = {
-            ...section.current,
-            [e.target.name]: parseInt(e.target.value, 10)
-        };
+        section.current = parseInt(e.target.value, 10);
 
         onChange(index, section.current);
-    }, []);
+    }, [index, onChange]);
 
     return (
         <div className="space-y-2">
-            <p>section #{index + 1}</p>
-
-            <div className="px-4">
-                <div className="flex flex-col">
-                    <label>Bubble count</label>
-                    <input name="bubbleCount" onChange={handleSliderChange} type="range" defaultValue={defaultSection.bubbleCount} min="1" max="400" />
-                </div>
-
-                <div className="flex flex-col">
-                    <label>Bubble min value</label>
-                    <input name="bubbleMinValue" onChange={handleSliderChange} type="range" defaultValue={defaultSection.bubbleMinValue} min="1" max="1000" />
-                </div>
-
-                <div className="flex flex-col">
-                    <label>Bubble max value</label>
-                    <input name="bubbleMaxValue" onChange={handleSliderChange} type="range" defaultValue={defaultSection.bubbleMaxValue} min="1" max="1000" />
-                </div>
+            <div className="flex space-x-4">
+                <p>section #{index + 1}</p>
+                <input className="flex-1" name="bubbleCount" onChange={handleSliderChange} type="range" value={defaultSection} min="1" max="100" />
             </div>
         </div>
     );

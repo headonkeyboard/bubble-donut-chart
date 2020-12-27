@@ -1,14 +1,15 @@
 import {Bubble} from "./models/models";
 import {Section} from "../../ui/models";
 
-export function getBubbles(sections: Section[]): Bubble[] {
+export function getBubbles(bubbleCount: number, sections: Section[]): Bubble[] {
   const bubbles: Bubble[] = [];
 
   let nbBubble = 0;
 
   sections.forEach((section, sectionIndex) => {
-    for (let j = 0; j < section.bubbleCount; j++) {
-      let bubbleValue = getRandomInt(section.bubbleMinValue, section.bubbleMaxValue);
+    const sectionBubbleCount = Math.floor(section / 100 * bubbleCount);
+    for (let j = 0; j < sectionBubbleCount; j++) {
+      let bubbleValue = getRandomInt(1, 10);
 
       const bubbleId = `bubble_${nbBubble}`;
 
