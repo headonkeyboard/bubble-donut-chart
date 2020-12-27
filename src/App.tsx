@@ -54,10 +54,10 @@ function App() {
 
   return (
     <div className="p-8 flex min-h-screen space-x-4 text-gray-100">
-        <div className="rounded-lg w-4/12 shadow self-start p-4 mt-8 bg-gray-900 max-w-sm">
+        <div className="w-4/12 self-start mt-8 max-w-sm">
             <BubbleDonutBuilder bubbleCount={defaultBubbleCount} sections={sections} onChange={handleSectionsChange} onBubbleCountChange={handleBubbleCountChange} />
         </div>
-        <div className="w-8/12 flex flex-shrink-0 flex-col justify-items-stretch">
+        <div className="w-8/12 flex flex-1 flex-shrink-0 flex-col justify-items-stretch">
             <BubbleDonutChart bubbles={bubbles} />
         </div>
     </div>

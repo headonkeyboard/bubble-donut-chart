@@ -65,7 +65,7 @@ const BubbleDonutChart: FunctionComponent<BubbleDonutChartProps> = ({ bubbles })
         if (null !== svgRef.current) {
             const elem = svgRef.current;
 
-            wrapperWidth.current = elem.clientWidth;
+            wrapperWidth.current = Math.min(elem.clientWidth, elem.clientHeight);
 
             const svg = d3.select(svgRef.current)
                 .append("svg")
@@ -87,8 +87,31 @@ const BubbleDonutChart: FunctionComponent<BubbleDonutChartProps> = ({ bubbles })
         }
     }, [bubbles]);
 
+    useEffect(() => {
+        function handleResize() {
+            if (null !== svgRef.current && null != d3SvgRef.current) {
+                const elem = svgRef.current;
+                wrapperWidth.current = Math.min(elem.clientWidth, elem.clientHeight);
+
+                d3SvgRef.current
+                    .attr("height", wrapperWidth.current)
+                    .attr("width", wrapperWidth.current)
+                ;
+
+                drawBubbles(d3SvgRef.current.selectAll("circle"), bubbles, wrapperWidth.current);
+            }
+        }
+
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        }
+    }, [bubbles]);
+
     return (
-        <div ref={svgRef}></div>
+        <div className="flex flex-1 justify-center items-center overflow-hidden" ref={svgRef}> {/* <div ref={svgRef} />*/}</div>
+
     );
 };
 

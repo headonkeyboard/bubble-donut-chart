@@ -19,7 +19,7 @@ const BubbleDonutBuilderSection: FunctionComponent<BubbleDonutBuilderSectionProp
     return (
         <div className="space-y-2">
             <div className="flex space-x-4">
-                <p>section #{index + 1}</p>
+                <p>Group #{index + 1}</p>
                 <input className="flex-1" name="bubbleCount" onChange={handleSliderChange} type="range" value={defaultSection} min="1" max="100" />
             </div>
         </div>

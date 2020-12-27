@@ -4,11 +4,9 @@
     <list default="true" id="15ed4c6c-dc7f-4fe7-8c26-83591f3c232f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/core/bubble-donut.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/core/bubble-donut.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/core/random.utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/core/random.utils.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BubbleDonutChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/BubbleDonutChart.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/builder/BubbleDonutBuilder.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/builder/BubbleDonutBuilder.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/builder/BubbleDonutBuilderSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/builder/BubbleDonutBuilderSection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/models.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/models.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,11 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/BubbleDonutChart.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="15" column="61" lean-forward="true" selection-start-line="15" selection-start-column="61" selection-end-line="15" selection-end-column="61" />
+            <state relative-caret-position="501">
+              <caret line="112" column="79" selection-start-line="112" selection-start-column="79" selection-end-line="112" selection-end-column="79" />
               <folding>
                 <element signature="e#0#83#0" expanded="true" />
               </folding>
@@ -47,7 +45,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lib/core/bubble-donut.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="221">
@@ -62,8 +60,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="410">
-              <caret line="55" column="65" selection-start-line="55" selection-start-column="65" selection-end-line="55" selection-end-column="65" />
+            <state relative-caret-position="470">
+              <caret line="59" column="42" selection-start-line="59" selection-start-column="42" selection-end-line="59" selection-end-column="42" />
               <folding>
                 <element signature="e#0#70#0" expanded="true" />
               </folding>
@@ -74,8 +72,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ui/builder/BubbleDonutBuilder.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="44" selection-start-line="44" selection-end-line="44" />
+            <state relative-caret-position="574">
+              <caret line="47" column="72" selection-start-line="47" selection-start-column="72" selection-end-line="47" selection-end-column="72" />
               <folding>
                 <element signature="e#0#57#0" expanded="true" />
               </folding>
@@ -86,8 +84,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ui/builder/BubbleDonutBuilderSection.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
+            <state relative-caret-position="315">
+              <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -115,6 +113,10 @@
       <find>.len</find>
       <find>gridle</find>
       <find>console.log(</find>
+      <find>bg-</find>
+      <find>section</find>
+      <find>push(</find>
+      <find>flex-</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src/lib</dir>
@@ -136,13 +138,13 @@
         <option value="$PROJECT_DIR$/src/BubblesDonutBuilder.tsx" />
         <option value="$PROJECT_DIR$/src/BubbleDonutBuilder.tsx" />
         <option value="$PROJECT_DIR$/src/index.css" />
-        <option value="$PROJECT_DIR$/src/BubbleDonutChart.tsx" />
         <option value="$PROJECT_DIR$/src/ui/models.ts" />
-        <option value="$PROJECT_DIR$/src/ui/builder/BubbleDonutBuilderSection.tsx" />
         <option value="$PROJECT_DIR$/src/lib/core/random.utils.ts" />
-        <option value="$PROJECT_DIR$/src/App.tsx" />
-        <option value="$PROJECT_DIR$/src/ui/builder/BubbleDonutBuilder.tsx" />
         <option value="$PROJECT_DIR$/src/lib/core/bubble-donut.ts" />
+        <option value="$PROJECT_DIR$/src/ui/builder/BubbleDonutBuilder.tsx" />
+        <option value="$PROJECT_DIR$/src/ui/builder/BubbleDonutBuilderSection.tsx" />
+        <option value="$PROJECT_DIR$/src/App.tsx" />
+        <option value="$PROJECT_DIR$/src/BubbleDonutChart.tsx" />
       </list>
     </option>
   </component>
@@ -164,6 +166,11 @@
             <path>
               <item name="react-bubble-donut" type="b2602c69:ProjectViewProjectNode" />
               <item name="react-bubble-donut" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-bubble-donut" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-bubble-donut" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -214,12 +221,12 @@
       <option name="presentableId" value="Default" />
       <updated>1608815148525</updated>
       <workItem from="1608815149759" duration="6685000" />
-      <workItem from="1608977481815" duration="31006000" />
+      <workItem from="1608977481815" duration="32973000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37691000" />
+    <option name="totallyTimeSpent" value="39658000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1177" extended-state="6" />
@@ -350,26 +357,6 @@
     <entry file="file://$PROJECT_DIR$/src/App.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/BubbleDonutChart.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="15" column="61" lean-forward="true" selection-start-line="15" selection-start-column="61" selection-end-line="15" selection-end-column="61" />
-          <folding>
-            <element signature="e#0#83#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/builder/BubbleDonutBuilderSection.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/lib/core/random.utils.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -380,10 +367,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/core/bubble-donut.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="107" column="58" selection-start-line="107" selection-start-column="58" selection-end-line="107" selection-end-column="58" />
+          <folding>
+            <element signature="e#0#112#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="55" column="65" selection-start-line="55" selection-start-column="65" selection-end-line="55" selection-end-column="65" />
+        <state relative-caret-position="470">
+          <caret line="59" column="42" selection-start-line="59" selection-start-column="42" selection-end-line="59" selection-end-column="42" />
           <folding>
             <element signature="e#0#70#0" expanded="true" />
           </folding>
@@ -392,20 +389,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/builder/BubbleDonutBuilder.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="44" selection-start-line="44" selection-end-line="44" />
+        <state relative-caret-position="574">
+          <caret line="47" column="72" selection-start-line="47" selection-start-column="72" selection-end-line="47" selection-end-column="72" />
           <folding>
             <element signature="e#0#57#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/core/bubble-donut.ts">
+    <entry file="file://$PROJECT_DIR$/src/ui/builder/BubbleDonutBuilderSection.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="107" column="58" selection-start-line="107" selection-start-column="58" selection-end-line="107" selection-end-column="58" />
+        <state relative-caret-position="315">
+          <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
           <folding>
-            <element signature="e#0#112#0" expanded="true" />
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BubbleDonutChart.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="501">
+          <caret line="112" column="79" selection-start-line="112" selection-start-column="79" selection-end-line="112" selection-end-column="79" />
+          <folding>
+            <element signature="e#0#83#0" expanded="true" />
           </folding>
         </state>
       </provider>
