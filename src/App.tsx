@@ -1,65 +1,69 @@
-import React, {useCallback, useEffect, useRef, useState} from 'react';
-import './App.css';
-import BubbleDonutChart from "./BubbleDonutChart";
-import {getBubbles} from "./lib/core/random.utils";
-import {Bubble} from "./lib/core/models/models";
+import React, { useCallback, useEffect, useRef, useState } from "react";
+import BubbleDonutChart from "./ui/BubbleDonutChart";
+import { getBubbles } from "./lib/core/random.utils";
+import { Bubble } from "./lib/core/models/models";
 import BubbleDonutBuilder from "./ui/builder/BubbleDonutBuilder";
-import {Section} from "./ui/models";
+import { Group } from "./ui/models";
 
 const defaultBubbleCount = 200;
 
-const defaultSections: Section[] = [
-    50, 25, 25
-];
+const defaultSections: Group[] = [50, 25, 25];
 
 function App() {
-    const [bubbles, setBubbles] = useState<Bubble[]>([]);
-    const [sections, setSections] = useState<Section[]>(defaultSections);
-    const bubbleCountRef = useRef<number>(defaultBubbleCount);
+  const [bubbles, setBubbles] = useState<Bubble[]>([]);
+  const [sections, setSections] = useState<Group[]>(defaultSections);
+  const bubbleCountRef = useRef<number>(defaultBubbleCount);
 
-    const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-    useEffect(() => {
-        const someBubbles = getBubbles(bubbleCountRef.current, defaultSections);
+  const updateBubbles = useCallback(
+    (bubbleCount: number, sections: Group[]) => {
+      if (null != timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+
+      timeoutRef.current = setTimeout(() => {
+        const someBubbles = getBubbles(bubbleCount, sections);
         setBubbles(someBubbles);
-    }, [setBubbles]);
+      }, 100);
+    },
+    [setBubbles, timeoutRef]
+  );
 
-    const handleSectionsChange = useCallback((newSections: Section[]) => {
-        if (null != timeoutRef.current) {
-            clearTimeout(timeoutRef.current);
-        }
+  const handleSectionsChange = useCallback(
+    (newSections: Group[]) => {
+      updateBubbles(bubbleCountRef.current, newSections);
+      setSections(newSections);
+    },
+    [setSections, updateBubbles]
+  );
 
-        timeoutRef.current = setTimeout(() => {
-            const someBubbles = getBubbles(bubbleCountRef.current, newSections);
-            setBubbles(someBubbles);
-        }, 500);
+  const handleBubbleCountChange = useCallback(
+    (bubbleCount) => {
+      updateBubbles(bubbleCount, sections);
 
+      bubbleCountRef.current = bubbleCount;
+    },
+    [sections, updateBubbles]
+  );
 
-        setSections(newSections);
-
-    }, [setBubbles, timeoutRef, setSections]);
-
-    const handleBubbleCountChange = useCallback((bubbleCount) => {
-        if (null != timeoutRef.current) {
-            clearTimeout(timeoutRef.current);
-        }
-
-        timeoutRef.current = setTimeout(() => {
-            const someBubbles = getBubbles(bubbleCount, sections);
-            setBubbles(someBubbles);
-        }, 100);
-
-        bubbleCountRef.current = bubbleCount;
-    }, [sections]);
+  useEffect(() => {
+    updateBubbles(bubbleCountRef.current, defaultSections);
+  }, [updateBubbles]);
 
   return (
-    <div className="p-4 md:p-8 flex flex-col-reverse md:flex-row min-h-screen md:space-x-4 text-gray-100">
-        <div className="md:w-4/12 md:self-start md:mt-8 md:max-w-sm">
-            <BubbleDonutBuilder bubbleCount={defaultBubbleCount} sections={sections} onChange={handleSectionsChange} onBubbleCountChange={handleBubbleCountChange} />
-        </div>
-        <div className="md:w-8/12 flex flex-1 flex-shrink-0 flex-col justify-items-stretch">
-            <BubbleDonutChart bubbles={bubbles} />
-        </div>
+    <div className="p-4 lg:p-8 flex flex-col-reverse lg:flex-row min-h-screen lg:space-x-4 text-gray-100">
+      <div className="lg:w-4/12 lg:self-start lg:mt-8 lg:max-w-sm">
+        <BubbleDonutBuilder
+          defaultBubbleCount={defaultBubbleCount}
+          groups={sections}
+          onChange={handleSectionsChange}
+          onBubbleCountChange={handleBubbleCountChange}
+        />
+      </div>
+      <div className="lg:w-8/12 flex flex-1 flex-shrink-0 flex-col justify-items-stretch">
+        <BubbleDonutChart bubbles={bubbles} />
+      </div>
     </div>
   );
 }

@@ -1,1 +1,1 @@
-export type Section = number;
+export type Group = number;

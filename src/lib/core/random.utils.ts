@@ -1,13 +1,13 @@
-import {Bubble} from "./models/models";
-import {Section} from "../../ui/models";
+import { Bubble } from "./models/models";
+import { Group } from "../../ui/models";
 
-export function getBubbles(bubbleCount: number, sections: Section[]): Bubble[] {
+export function getBubbles(bubbleCount: number, sections: Group[]): Bubble[] {
   const bubbles: Bubble[] = [];
 
   let nbBubble = 0;
 
   sections.forEach((section, sectionIndex) => {
-    const sectionBubbleCount = Math.floor(section / 100 * bubbleCount);
+    const sectionBubbleCount = Math.floor((section / 100) * bubbleCount);
     for (let j = 0; j < sectionBubbleCount; j++) {
       let bubbleValue = getRandomInt(1, 10);
 
@@ -17,7 +17,7 @@ export function getBubbles(bubbleCount: number, sections: Section[]): Bubble[] {
         group: `group ${sectionIndex + 1}`,
         weight: bubbleValue,
         id: bubbleId,
-        label: 'some label',
+        label: "some label",
       });
 
       nbBubble++;

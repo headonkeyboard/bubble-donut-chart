@@ -1,10 +1,10 @@
-import { Bubble, Coord, Grid, GridEdges, Point } from '../models/models';
+import { Bubble, Coord, Grid, GridEdges, Point } from "../models/models";
 import {
   getGridPointPosition,
   getDistance,
   getMaxDistance,
   getMinDistance,
-} from './coords.utils';
+} from "./coords.utils";
 
 /**
  * Return a bubble radius based on it's weight proportional to donutArea
@@ -56,7 +56,12 @@ const generateGrid = (
   gridPointPositionsCache: Map<number, Point>,
   grid: Grid = [],
   bubbleCoords: Array<Coord> = []
-): {grid: Grid, maxDistance: number; maxDistanceX: number; maxDistanceY: number} => {
+): {
+  grid: Grid;
+  maxDistance: number;
+  maxDistanceX: number;
+  maxDistanceY: number;
+} => {
   let maxDistance = 0;
   let maxDistanceX = 0;
   let maxDistanceY = 0;
@@ -76,16 +81,15 @@ const generateGrid = (
 
     if (gridPointPositionsCache.has(i)) {
       gridPointCoord = gridPointPositionsCache.get(i) as Point;
-    }
-    else {
+    } else {
       gridPointCoord = getGridPointPosition(
-          x,
-          y,
-          startAngle,
-          endAngle,
-          gridLength,
-          innerRadius,
-          outerRadius
+        x,
+        y,
+        startAngle,
+        endAngle,
+        gridLength,
+        innerRadius,
+        outerRadius
       );
 
       gridPointPositionsCache.set(i, gridPointCoord);
@@ -114,7 +118,7 @@ const generateGrid = (
     if (bubbleCoords.length > 0) {
       const lastAddedBubble = bubbleCoords[bubbleCoords.length - 1];
       const bubbleCoordDistance =
-          getDistance(gridPointCoord, lastAddedBubble) - lastAddedBubble.r;
+        getDistance(gridPointCoord, lastAddedBubble) - lastAddedBubble.r;
       if (minDistance && minDistance > bubbleCoordDistance) {
         minDistance = bubbleCoordDistance;
       }
@@ -129,7 +133,7 @@ const generateGrid = (
     grid[i] = minDistance;
   }
 
-  return {grid, maxDistance, maxDistanceX, maxDistanceY};
+  return { grid, maxDistance, maxDistanceX, maxDistanceY };
 };
 
 /**
@@ -174,5 +178,5 @@ export {
   generateGrid,
   getBubbleRadius,
   getAllBubbleWeightSum,
-  getBubblePositionAndRadius
+  getBubblePositionAndRadius,
 };

@@ -3,6 +3,36 @@
   <component name="issues">
     <option name="index">
       <map>
+        <entry key="$PROJECT_DIR$/../datapedia-services/package.json">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../datapedia-services/src/app/components/bubble-donut/lib/core/bubble-donut.ts">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../datapedia-services/src/app/components/bubble-donut/lib/core/utils/bubble.utils.ts">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../datapedia-services/src/environments/environment.ts">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../datapedia-services/stories/atoms/BubbleDonut.stories.ts">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/.prettierignore">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/craco.config.js">
           <value>
             <set />
@@ -14,6 +44,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/public/index.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/App.css">
           <value>
             <set />
           </value>
@@ -43,6 +78,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/d3js/colors.utils.ts">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/index.css">
           <value>
             <set />
@@ -68,6 +108,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/ui/BubbleDonutChart.tsx">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/ui/builder/BubbleDonutBuilder.tsx">
           <value>
             <set />
@@ -79,6 +124,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/ui/models.ts">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/utils/colors.utils.ts">
           <value>
             <set />
           </value>

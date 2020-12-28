@@ -1,4 +1,4 @@
-import { Grid, Point } from '../models/models';
+import { Grid, Point } from "../models/models";
 
 /**
  * Use Pythagorean theorem to return a distance (in pixels) between two point

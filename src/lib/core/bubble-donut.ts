@@ -1,16 +1,17 @@
 import {
   Bubble,
-  BubbleWithCoordsAndRadius, Grid,
+  BubbleWithCoordsAndRadius,
+  Grid,
   GridEdges,
   Point,
   Section,
-} from './models/models';
-import { getGridPointPosition } from './utils/coords.utils';
+} from "./models/models";
+import { getGridPointPosition } from "./utils/coords.utils";
 import {
   generateGrid,
   getBubblePositionAndRadius,
-  getAllBubbleWeightSum
-} from './utils/bubble.utils';
+  getAllBubbleWeightSum,
+} from "./utils/bubble.utils";
 
 class BubbleDonut {
   sections = new Map<string, Section>();
@@ -31,9 +32,7 @@ class BubbleDonut {
     }
   }
 
-  loadBubbles(
-    bubbles: Bubble[]
-  ): void {
+  loadBubbles(bubbles: Bubble[]): void {
     var t0 = performance.now();
 
     this.bubbles = bubbles;
@@ -44,23 +43,20 @@ class BubbleDonut {
 
     const bubblesPerSection: {
       [key: string]: Array<Bubble>;
-    } = this.bubbles.reduce(
-      (acc: { [key: string]: Array<Bubble> }, bubble) => {
-        if (undefined === acc[bubble.group]) {
-          acc[bubble.group] = [];
-        }
+    } = this.bubbles.reduce((acc: { [key: string]: Array<Bubble> }, bubble) => {
+      if (undefined === acc[bubble.group]) {
+        acc[bubble.group] = [];
+      }
 
-        acc[bubble.group].push(bubble);
+      acc[bubble.group].push(bubble);
 
-        return acc;
-      },
-      {}
-    );
+      return acc;
+    }, {});
 
     const groupKeys = Object.keys(bubblesPerSection);
     groupKeys.sort((a, b) => {
-      const sectionANumber = a.replace('group ', '');
-      const sectionBNumber = b.replace('group ', '');
+      const sectionANumber = a.replace("group ", "");
+      const sectionBNumber = b.replace("group ", "");
 
       return parseInt(sectionANumber, 10) - parseInt(sectionBNumber, 10);
     });
@@ -69,11 +65,7 @@ class BubbleDonut {
       const sectionBubbles = bubblesPerSection[sectionKey];
       const sectionRatio =
         getAllBubbleWeightSum(sectionBubbles) / this.allBubbleWeightSum;
-      this.addDonutSection(
-        sectionKey,
-        sectionRatio,
-        sectionBubbles
-      );
+      this.addDonutSection(sectionKey, sectionRatio, sectionBubbles);
     });
 
     var t1 = performance.now();
@@ -121,7 +113,7 @@ class BubbleDonut {
         getGridPointPosition(
           i,
           0,
-            startAngle,
+          startAngle,
           endAngle,
           gridLength,
           this.innerRadius,
@@ -170,7 +162,10 @@ class BubbleDonut {
 
     const bubblesWithCoordsAndRadius: BubbleWithCoordsAndRadius[] = [];
 
-    let grid: Grid, maxDistance: number, maxDistanceX: number, maxDistanceY: number;
+    let grid: Grid,
+      maxDistance: number,
+      maxDistanceX: number,
+      maxDistanceY: number;
 
     const gridPointPositionsCache = new Map<number, Point>();
 
@@ -187,13 +182,13 @@ class BubbleDonut {
 
     bubbles.forEach((bubble) => {
       const maxDistancePoint = getGridPointPosition(
-          maxDistanceX,
-          maxDistanceY,
-          startAngle,
-          endAngle,
-          gridLength,
-          this.innerRadius,
-          this.outerRadius
+        maxDistanceX,
+        maxDistanceY,
+        startAngle,
+        endAngle,
+        gridLength,
+        this.innerRadius,
+        this.outerRadius
       );
 
       const { bubbleX, bubbleY, bubbleR } = getBubblePositionAndRadius(
@@ -211,7 +206,7 @@ class BubbleDonut {
         r: bubbleR,
       });
 
-      ({grid, maxDistance, maxDistanceX, maxDistanceY} = generateGrid(
+      ({ grid, maxDistance, maxDistanceX, maxDistanceY } = generateGrid(
         gridEdges,
         gridLength,
         startAngle,
@@ -231,7 +226,7 @@ class BubbleDonut {
       startAngle,
       endAngle,
       gridLength,
-      edges: gridEdges
+      edges: gridEdges,
     };
 
     this.sections.set(sectionKey, section);
