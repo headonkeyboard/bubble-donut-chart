@@ -7,7 +7,7 @@ type BubbleDonutChartProps = {
     bubbles: Bubble[]
 }
 
-function drawBubbles(selection: d3.Selection<d3.BaseType, unknown, SVGSVGElement, unknown>, bubbles: Bubble[], width: number) {
+function drawBubbles(selection: d3.Selection<SVGCircleElement, unknown, SVGSVGElement, unknown>, bubbles: Bubble[], width: number) {
     const diameter = width * 0.8;
     const radius = diameter / 2;
     const padding = (width - diameter);
@@ -42,18 +42,31 @@ function drawBubbles(selection: d3.Selection<d3.BaseType, unknown, SVGSVGElement
         .domain([0, maxX])
         .range([0, width - padding]);
 
-    selection
-        .remove()
-        .exit()
-        .data(d3Bubbles)
-        .enter()
-        .append("circle")
+    var u: d3.Selection<SVGCircleElement, BubbleWithCoordsAndRadius, SVGSVGElement, unknown> = selection.data(d3Bubbles, d => (d as BubbleWithCoordsAndRadius).id);
 
-        .attr("cx", d => xScale((d as BubbleWithCoordsAndRadius).x + offset ))
-        .attr("cy", d =>  xScale((d as BubbleWithCoordsAndRadius).y + offset ))
-        .attr("r", d =>  xScale((d as BubbleWithCoordsAndRadius).r))
-        .attr("fill", d => groupsColors(d.group) as string)
-        .attr("opacity", 1)
+    u.enter()
+        .append('circle')
+            .attr("opacity", 0)
+            .attr("cx", xScale(radius))
+            .attr("cy", xScale(radius))
+        .merge(u)
+            .transition()
+            .duration(300)
+            .attr("opacity", 1)
+            .attr("cx", xScale(radius))
+            .attr("cy", xScale(radius))
+            .attr("cx", d => xScale((d as BubbleWithCoordsAndRadius).x + offset ))
+            .attr("cy", d =>  xScale((d as BubbleWithCoordsAndRadius).y + offset ))
+            .attr("fill", d => groupsColors(d.group) as string)
+            .attr("r", d =>  xScale((d as BubbleWithCoordsAndRadius).r))
+
+    u.exit()
+        .transition()
+        .duration(300)
+        .attr("r", 0)
+        .attr("opacity", 0)
+        .remove()
+
 }
 
 const BubbleDonutChart: FunctionComponent<BubbleDonutChartProps> = ({ bubbles }) => {

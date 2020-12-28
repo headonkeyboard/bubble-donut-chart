@@ -53,7 +53,7 @@ function App() {
     }, [sections]);
 
   return (
-    <div className="p-4 md:p-8 flex flex-col-reverse md:flex-row min-h-screen space-x-4 text-gray-100">
+    <div className="p-4 md:p-8 flex flex-col-reverse md:flex-row min-h-screen md:space-x-4 text-gray-100">
         <div className="md:w-4/12 md:self-start md:mt-8 md:max-w-sm">
             <BubbleDonutBuilder bubbleCount={defaultBubbleCount} sections={sections} onChange={handleSectionsChange} onBubbleCountChange={handleBubbleCountChange} />
         </div>

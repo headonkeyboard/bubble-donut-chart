@@ -54,7 +54,7 @@ const BubbleDonutBuilder: FunctionComponent<BubbleDonutBuilderProps> = ({bubbleC
             <div className="space-y-4">
                 <div className="rounded-lg p-4 bg-gray-900 flex items-center space-x-4 border border-gray-700 bg-opacity-60">
                     <label>Bubble Count</label>
-                    <input onChange={handleBubbleCountChange} className="flex-1" name="bubbleCount"  type="range" defaultValue={bubbleCount} min="100" max="400" />
+                    <input onChange={handleBubbleCountChange} className="flex-1" name="bubbleCount"  type="range" defaultValue={bubbleCount} min="100" max="700" />
                 </div>
 
                 <div className="space-y-4 rounded-lg p-4 bg-gray-900 border border-gray-700 flex flex-col bg-opacity-60">
