@@ -1,5 +1,5 @@
 import {
-  Bubble,
+  RawData,
   BubbleWithCoordsAndRadius,
   Grid,
   GridEdges,
@@ -15,7 +15,7 @@ import {
 
 class BubbleDonut {
   sections = new Map<string, Section>();
-  bubbles: Bubble[] = [];
+  bubbles: RawData[] = [];
 
   donutArea = -1;
   allBubbleWeightSum = 0;
@@ -23,7 +23,7 @@ class BubbleDonut {
   constructor(
     public innerRadius: number,
     public outerRadius: number,
-    bubbles: Bubble[] = []
+    bubbles: RawData[] = []
   ) {
     this.updateRadius(innerRadius, outerRadius);
 
@@ -32,9 +32,7 @@ class BubbleDonut {
     }
   }
 
-  loadBubbles(bubbles: Bubble[]): void {
-    var t0 = performance.now();
-
+  loadBubbles(bubbles: RawData[]): void {
     this.bubbles = bubbles;
     this.bubbles.sort((a, b) => b.weight - a.weight);
 
@@ -42,8 +40,8 @@ class BubbleDonut {
     this.sections = new Map();
 
     const bubblesPerSection: {
-      [key: string]: Array<Bubble>;
-    } = this.bubbles.reduce((acc: { [key: string]: Array<Bubble> }, bubble) => {
+      [key: string]: Array<RawData>;
+    } = this.bubbles.reduce((acc: { [key: string]: Array<RawData> }, bubble) => {
       if (undefined === acc[bubble.group]) {
         acc[bubble.group] = [];
       }
@@ -67,9 +65,6 @@ class BubbleDonut {
         getAllBubbleWeightSum(sectionBubbles) / this.allBubbleWeightSum;
       this.addDonutSection(sectionKey, sectionRatio, sectionBubbles);
     });
-
-    var t1 = performance.now();
-    console.log(t1 - t0);
   }
 
   updateRadius(innerRadius: number, outerRadius: number): void {
@@ -85,7 +80,7 @@ class BubbleDonut {
   private addDonutSection(
     sectionKey: string,
     ratio: number,
-    bubbles: Array<Bubble>
+    bubbles: Array<RawData>
   ): Section {
     const previousSections = Array.from(this.sections);
 
@@ -233,6 +228,23 @@ class BubbleDonut {
 
     return section;
   }
+
+  /**
+   * Returns a flat array of BubbleWithCoordsAndRadius extracted from each groups
+   *
+   * @param bubbleDonutSections
+   */
+  getBubbles(): BubbleWithCoordsAndRadius[] {
+    const bubbles: BubbleWithCoordsAndRadius[] = [];
+
+    for (let [, bubbleSection] of this.sections) {
+      bubbleSection.bubbles.forEach((bubble) => {
+        bubbles.push(bubble);
+      });
+    }
+
+    return bubbles;
+  };
 }
 
 export { BubbleDonut };

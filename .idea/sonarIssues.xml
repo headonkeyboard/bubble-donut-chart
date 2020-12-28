@@ -88,6 +88,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/index.tsx">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/lib/core/bubble-donut.ts">
           <value>
             <set />
@@ -113,7 +118,47 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/ui/Card.tsx">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ui/bubble-donut-chart/BubbleDonutChart.tsx">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ui/bubble-donut-chart/__snapshots__/bubble-donut-d3-layout.utils.test.ts.snap">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ui/bubble-donut-chart/bubble-donut-d3-layout.utils.test.ts">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ui/bubble-donut-chart/bubble-donut-d3-layout.utils.ts">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ui/bubble-donut-chart/bubble-donut-d3.utils.ts">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ui/bubble-donut-chart/constants.ts">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/ui/builder/BubbleDonutBuilder.tsx">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ui/builder/BubbleDonutBuilderGroup.tsx">
           <value>
             <set />
           </value>

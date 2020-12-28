@@ -1,8 +1,7 @@
-import { Bubble } from "./models/models";
-import { Group } from "../../ui/models";
+import { RawData } from "./models/models";
 
-export function getBubbles(bubbleCount: number, sections: Group[]): Bubble[] {
-  const bubbles: Bubble[] = [];
+export function getBubbles(bubbleCount: number, sections: number[]): RawData[] {
+  const bubbles: RawData[] = [];
 
   let nbBubble = 0;
 

@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`createD3SvgRoot 1`] = `
+<div>
+  <svg
+    height="200"
+    width="200"
+  />
+</div>
+`;

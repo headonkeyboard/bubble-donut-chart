@@ -1,15 +1,14 @@
-import { Bubble, Coord, Grid, GridEdges, Point } from "../models/models";
+import { RawData, Coord, Grid, GridEdges, Point } from "../models/models";
 import {
   getGridPointPosition,
   getDistance,
-  getMaxDistance,
   getMinDistance,
 } from "./coords.utils";
 
 /**
  * Return a bubble radius based on it's weight proportional to donutArea
  *
- * @param bubbleValue Bubble coefficient weight
+ * @param bubbleValue RawData coefficient weight
  * @param donutArea Donut surface
  * @param totalBubbleValues Sum of all bubbles coefficient weight
  */
@@ -27,7 +26,7 @@ const getBubbleRadius = (
  *
  * @param bubbles Array of bubble data
  */
-const getAllBubbleWeightSum = (bubbles: Bubble[]): number => {
+const getAllBubbleWeightSum = (bubbles: RawData[]): number => {
   return bubbles.reduce((acc, bubble) => {
     return acc + bubble.weight;
   }, 0);

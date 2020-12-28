@@ -3,7 +3,7 @@ export interface Point {
   y: number;
 }
 
-export interface Bubble {
+export interface RawData {
   id: string;
   label: string;
   weight: number;
@@ -28,5 +28,5 @@ export interface GridEdges {
 }
 
 export type Coord = Point & { r: number };
-export type BubbleWithCoordsAndRadius = Bubble & Coord;
+export type BubbleWithCoordsAndRadius = RawData & Coord;
 export type Grid = Array<number>;
