@@ -37,7 +37,7 @@ const BubbleDonutChart: FunctionComponent<BubbleDonutChartProps> = ({
     if (svgWrapperRef.current) {
       const size = Math.min(svgWrapperRef.current.clientWidth, svgWrapperRef.current.clientHeight);
 
-      // priorize ui interactions as bubbleDonut loading might take some time
+      // priorize ui interactions as bubble layout might take some time
       setTimeout(() => {
         if (d3BubbleSelectionRef.current) {
           layoutBubbles(

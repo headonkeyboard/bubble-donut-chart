@@ -2,23 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15ed4c6c-dc7f-4fe7-8c26-83591f3c232f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ui/bubble-donut-chart/BubbleDonutChart.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/react-bubble-donut.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/react-bubble-donut.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarIssues.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarIssues.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/core/bubble-donut.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/core/bubble-donut.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/core/models/models.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/core/models/models.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/core/random.utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/core/random.utils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/core/utils/bubble.utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/core/utils/bubble.utils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/BubbleDonutChart.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/builder/BubbleDonutBuilder.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/builder/BubbleDonutBuilder.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/builder/BubbleDonutBuilderSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/builder/BubbleDonutBuilderGroup.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/models.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/bubble-donut-chart/BubbleDonutChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/bubble-donut-chart/BubbleDonutChart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/bubble-donut-chart/__snapshots__/bubble-donut-d3-layout.utils.test.ts.snap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/bubble-donut-chart/bubble-donut-d3-layout.utils.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/bubble-donut-chart/bubble-donut-d3-layout.utils.test.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,8 +24,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ui/bubble-donut-chart/BubbleDonutChart.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="47" column="9" selection-start-line="47" selection-start-column="9" selection-end-line="47" selection-end-column="9" />
+            <state relative-caret-position="189">
+              <caret line="39" column="50" selection-start-line="39" selection-start-column="50" selection-end-line="39" selection-end-column="50" />
               <folding>
                 <element signature="e#0#94#0" expanded="true" />
               </folding>
@@ -69,8 +57,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ui/bubble-donut-chart/bubble-donut-d3-layout.utils.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="83" column="13" selection-start-line="83" selection-start-column="13" selection-end-line="83" selection-end-column="13" />
+            <state relative-caret-position="55">
+              <caret line="38" column="16" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -78,11 +66,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ui/bubble-donut-chart/bubble-donut-d3-layout.utils.test.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="34" column="33" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
+            <state relative-caret-position="428">
+              <caret line="64" column="85" selection-start-line="64" selection-start-column="85" selection-end-line="64" selection-end-column="85" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -90,11 +78,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/package.json">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/node_modules/@types/jest/index.d.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="107">
-              <caret line="31" column="35" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
+            <state relative-caret-position="188">
+              <caret line="218" column="13" selection-start-line="218" selection-start-column="13" selection-end-line="218" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -176,10 +164,10 @@
         <option value="$PROJECT_DIR$/src/ui/BubbleDonutChart.tsx" />
         <option value="$PROJECT_DIR$/src/ui/bubble-donut-chart/bubble-donut-d3.utils.ts" />
         <option value="$PROJECT_DIR$/src/ui/bubble-donut-chart/constants.ts" />
-        <option value="$PROJECT_DIR$/src/ui/bubble-donut-chart/BubbleDonutChart.tsx" />
         <option value="$PROJECT_DIR$/src/ui/bubble-donut-chart/bubble-donut-d3-layout.utils.ts" />
-        <option value="$PROJECT_DIR$/src/ui/bubble-donut-chart/bubble-donut-d3-layout.utils.test.ts" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/src/ui/bubble-donut-chart/BubbleDonutChart.tsx" />
+        <option value="$PROJECT_DIR$/src/ui/bubble-donut-chart/bubble-donut-d3-layout.utils.test.ts" />
       </list>
     </option>
   </component>
@@ -268,7 +256,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Jest.layoutBubbles">
+  <component name="RunManager" selected="Jest.resizeD3ViewportAndBubbles should resize svg root element and circles children">
     <configuration name="createD3SvgRoot" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -295,7 +283,7 @@
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="renders learn react link (1)" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="resizeD3ViewportAndBubbles should resize svg root element and circles children" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
@@ -304,29 +292,43 @@
       <scope-kind value="TEST" />
       <test-file value="$PROJECT_DIR$/src/ui/bubble-donut-chart/bubble-donut-d3-layout.utils.test.ts" />
       <test-names>
-        <test-name value="renders learn react link" />
+        <test-name value="resizeD3ViewportAndBubbles should resize svg root element and circles children" />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="renders learn react link" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="resizeD3ViewportAndBubbles should resize svg root element" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/App.test.tsx" />
+      <test-file value="$PROJECT_DIR$/src/ui/bubble-donut-chart/bubble-donut-d3-layout.utils.test.ts" />
       <test-names>
-        <test-name value="renders learn react link" />
+        <test-name value="resizeD3ViewportAndBubbles should resize svg root element" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="resizeD3ViewportAndBubbles" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/ui/bubble-donut-chart/bubble-donut-d3-layout.utils.test.ts" />
+      <test-names>
+        <test-name value="resizeD3ViewportAndBubbles" />
       </test-names>
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Jest.resizeD3ViewportAndBubbles should resize svg root element and circles children" />
+        <item itemvalue="Jest.resizeD3ViewportAndBubbles should resize svg root element" />
+        <item itemvalue="Jest.resizeD3ViewportAndBubbles" />
         <item itemvalue="Jest.layoutBubbles" />
         <item itemvalue="Jest.createD3SvgRoot" />
-        <item itemvalue="Jest.renders learn react link (1)" />
-        <item itemvalue="Jest.renders learn react link" />
       </list>
     </recent_temporary>
   </component>
@@ -341,44 +343,44 @@
       <option name="presentableId" value="Default" />
       <updated>1608815148525</updated>
       <workItem from="1608815149759" duration="6685000" />
-      <workItem from="1608977481815" duration="58695000" />
+      <workItem from="1608977481815" duration="61353000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="layoutBubbles - 2020.12.28 at 20h 07m 52s.xml">
-      <configuration name="layoutBubbles" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="resizeD3ViewportAndBubbles_should_resize_svg_root_element_and_circles_children - 2020.12.29 at 11h 45m 40s.xml">
+      <configuration name="resizeD3ViewportAndBubbles should resize svg root element and circles children" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="layoutBubbles - 2020.12.28 at 20h 08m 36s.xml">
-      <configuration name="layoutBubbles" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="resizeD3ViewportAndBubbles_should_resize_svg_root_element_and_circles_children - 2020.12.29 at 11h 46m 07s.xml">
+      <configuration name="resizeD3ViewportAndBubbles should resize svg root element and circles children" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="layoutBubbles - 2020.12.28 at 20h 09m 08s.xml">
-      <configuration name="layoutBubbles" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="resizeD3ViewportAndBubbles_should_resize_svg_root_element_and_circles_children - 2020.12.29 at 11h 46m 20s.xml">
+      <configuration name="resizeD3ViewportAndBubbles should resize svg root element and circles children" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="layoutBubbles - 2020.12.28 at 20h 10m 19s.xml">
-      <configuration name="layoutBubbles" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="resizeD3ViewportAndBubbles_should_resize_svg_root_element_and_circles_children - 2020.12.29 at 11h 47m 08s.xml">
+      <configuration name="resizeD3ViewportAndBubbles should resize svg root element and circles children" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="layoutBubbles - 2020.12.28 at 20h 10m 30s.xml">
-      <configuration name="layoutBubbles" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="resizeD3ViewportAndBubbles_should_resize_svg_root_element_and_circles_children - 2020.12.29 at 11h 48m 44s.xml">
+      <configuration name="resizeD3ViewportAndBubbles should resize svg root element and circles children" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="layoutBubbles - 2020.12.28 at 20h 10m 39s.xml">
-      <configuration name="layoutBubbles" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="resizeD3ViewportAndBubbles_should_resize_svg_root_element_and_circles_children - 2020.12.29 at 11h 53m 32s.xml">
+      <configuration name="resizeD3ViewportAndBubbles should resize svg root element and circles children" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="layoutBubbles - 2020.12.28 at 20h 11m 24s.xml">
-      <configuration name="layoutBubbles" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="resizeD3ViewportAndBubbles_should_resize_svg_root_element_and_circles_children - 2020.12.29 at 11h 53m 49s.xml">
+      <configuration name="resizeD3ViewportAndBubbles should resize svg root element and circles children" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="layoutBubbles - 2020.12.28 at 20h 12m 41s.xml">
-      <configuration name="layoutBubbles" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="resizeD3ViewportAndBubbles_should_resize_svg_root_element_and_circles_children - 2020.12.29 at 11h 59m 38s.xml">
+      <configuration name="resizeD3ViewportAndBubbles should resize svg root element and circles children" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="layoutBubbles - 2020.12.28 at 20h 13m 42s.xml">
-      <configuration name="layoutBubbles" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="resizeD3ViewportAndBubbles_should_resize_svg_root_element_and_circles_children - 2020.12.29 at 12h 00m 01s.xml">
+      <configuration name="resizeD3ViewportAndBubbles should resize svg root element and circles children" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="layoutBubbles - 2020.12.28 at 20h 14m 02s.xml">
-      <configuration name="layoutBubbles" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="resizeD3ViewportAndBubbles_should_resize_svg_root_element_and_circles_children - 2020.12.29 at 12h 00m 15s.xml">
+      <configuration name="resizeD3ViewportAndBubbles should resize svg root element and circles children" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65380000" />
+    <option name="totallyTimeSpent" value="68038000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1177" extended-state="6" />
@@ -390,7 +392,7 @@
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3299539" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.43225807" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.44423965" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -400,7 +402,7 @@
       <window_info anchor="bottom" id="SonarQube" order="9" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
       <window_info anchor="bottom" id="TypeScript" order="11" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="12" visible="true" weight="0.6138249" />
+      <window_info anchor="bottom" id="Terminal" order="12" weight="0.36313364" />
       <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -595,39 +597,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/builder/BubbleDonutBuilder.tsx">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="42" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#92#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="224">
+          <caret line="31" column="35" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/bubble-donut-chart/BubbleDonutChart.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="47" column="9" selection-start-line="47" selection-start-column="9" selection-end-line="47" selection-end-column="9" />
+        <state relative-caret-position="189">
+          <caret line="39" column="50" selection-start-line="39" selection-start-column="50" selection-end-line="39" selection-end-column="50" />
           <folding>
             <element signature="e#0#94#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/bubble-donut-chart/__snapshots__/bubble-donut-d3-layout.utils.test.ts.snap">
+    <entry file="file://$PROJECT_DIR$/src/ui/builder/BubbleDonutBuilder.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/bubble-donut-chart/bubble-donut-d3-layout.utils.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="83" column="13" selection-start-line="83" selection-start-column="13" selection-end-line="83" selection-end-column="13" />
+        <state relative-caret-position="480">
+          <caret line="32" column="42" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
           <folding>
-            <element signature="e#0#25#0" expanded="true" />
+            <element signature="e#0#92#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -639,20 +631,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/bubble-donut-chart/bubble-donut-d3-layout.utils.test.ts">
+    <entry file="file://$PROJECT_DIR$/src/ui/bubble-donut-chart/__snapshots__/bubble-donut-d3-layout.utils.test.ts.snap">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="34" column="33" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
+        <state relative-caret-position="171">
+          <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@types/jest/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="218" column="13" selection-start-line="218" selection-start-column="13" selection-end-line="218" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/bubble-donut-chart/bubble-donut-d3-layout.utils.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="55">
+          <caret line="38" column="16" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#25#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
+    <entry file="file://$PROJECT_DIR$/src/ui/bubble-donut-chart/bubble-donut-d3-layout.utils.test.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="31" column="35" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
+        <state relative-caret-position="428">
+          <caret line="64" column="85" selection-start-line="64" selection-start-column="85" selection-end-line="64" selection-end-column="85" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
