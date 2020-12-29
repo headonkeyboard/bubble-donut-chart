@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15ed4c6c-dc7f-4fe7-8c26-83591f3c232f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ui/bubble-donut-chart/utils/bubble-donut-d3-layout.utils.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarIssues.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarIssues.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.test.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/bubble-donut-chart/BubbleDonutChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/bubble-donut-chart/BubbleDonutChart.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/bubble-donut-chart/__snapshots__/bubble-donut-d3-layout.utils.test.ts.snap" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/bubble-donut-chart/bubble-donut-d3-layout.utils.test.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/bubble-donut-chart/bubble-donut-d3-layout.utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/bubble-donut-chart/utils/bubble-donut-d3-layout.utils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/builder/BubbleDonutBuilder.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/builder/BubbleDonutBuilder.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/builder/BubbleDonutBuilderGroup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/builder/BubbleDonutBuilderGroup.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,11 +45,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="26">
-              <caret line="17" column="21" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="21" />
+            <state relative-caret-position="87">
+              <caret line="30" column="4" lean-forward="true" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
               <folding>
                 <element signature="e#0#72#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="40" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -78,11 +75,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.test.tsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="195">
-              <caret line="13" column="48" lean-forward="true" selection-start-line="13" selection-start-column="48" selection-end-line="13" selection-end-column="48" />
+              <caret line="13" column="48" selection-start-line="13" selection-start-column="48" selection-end-line="13" selection-end-column="48" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -146,7 +143,6 @@
         <option value="$PROJECT_DIR$/src/BubblesDonutBuilder.tsx" />
         <option value="$PROJECT_DIR$/src/BubbleDonutBuilder.tsx" />
         <option value="$PROJECT_DIR$/src/index.css" />
-        <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/src/d3js/colors.utils.ts" />
         <option value="$PROJECT_DIR$/src/ui/models.ts" />
         <option value="$PROJECT_DIR$/src/App.css" />
@@ -180,6 +176,7 @@
         <option value="$PROJECT_DIR$/src/ui/bubble-donut-chart/BubbleDonutChart.tsx" />
         <option value="$PROJECT_DIR$/src/ui/bubble-donut-chart/BubbleDonutChart.test.tsx" />
         <option value="$PROJECT_DIR$/src/App.test.tsx" />
+        <option value="$PROJECT_DIR$/public/index.html" />
       </list>
     </option>
   </component>
@@ -201,6 +198,11 @@
             <path>
               <item name="react-bubble-donut" type="b2602c69:ProjectViewProjectNode" />
               <item name="react-bubble-donut" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-bubble-donut" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-bubble-donut" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="react-bubble-donut" type="b2602c69:ProjectViewProjectNode" />
@@ -253,7 +255,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Jest.App.App should render builder and chart">
+  <component name="RunManager" selected="Jest.App">
     <configuration name="App" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -325,8 +327,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Jest.App.App should render builder and chart" />
         <item itemvalue="Jest.App" />
+        <item itemvalue="Jest.App.App should render builder and chart" />
         <item itemvalue="Jest.BubbleDonutChart.bubble test 2" />
         <item itemvalue="Jest.BubbleDonutChart.BubbleDonutChart should display" />
         <item itemvalue="Jest.bubble donut d3 layout utils.resizeD3ViewportAndBubbles should resize svg root element and circles children" />
@@ -344,14 +346,11 @@
       <option name="presentableId" value="Default" />
       <updated>1608815148525</updated>
       <workItem from="1608815149759" duration="6685000" />
-      <workItem from="1608977481815" duration="77670000" />
+      <workItem from="1608977481815" duration="78622000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="App_App_should_render_builder_and_chart - 2020.12.29 at 18h 50m 34s.xml">
-      <configuration name="App.App should render builder and chart" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
     <history-entry file="App_App_should_render_builder_and_chart - 2020.12.29 at 18h 51m 02s.xml">
       <configuration name="App.App should render builder and chart" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
@@ -379,21 +378,24 @@
     <history-entry file="Update_snapshot_for_App_App_should_render_builder_and_chart - 2020.12.29 at 18h 55m 22s.xml">
       <configuration name="Update snapshot for App.App should render builder and chart" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
+    <history-entry file="App - 2020.12.29 at 18h 56m 56s.xml">
+      <configuration name="App" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84355000" />
+    <option name="totallyTimeSpent" value="85307000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1177" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25239617" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25239617" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3299539" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49946752" visible="true" weight="0.3935484" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946752" weight="0.3935484" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -403,7 +405,7 @@
       <window_info anchor="bottom" id="SonarQube" order="9" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
       <window_info anchor="bottom" id="TypeScript" order="11" />
-      <window_info anchor="bottom" id="Terminal" order="12" weight="0.36313364" />
+      <window_info anchor="bottom" id="Terminal" order="12" visible="true" weight="0.36313364" />
       <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.5005325" side_tool="true" weight="0.3935484" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -443,13 +445,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="29" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -738,23 +733,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.test.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="48" selection-start-line="13" selection-start-column="48" selection-end-line="13" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="17" column="21" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="21" />
+        <state relative-caret-position="87">
+          <caret line="30" column="4" lean-forward="true" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
           <folding>
             <element signature="e#0#72#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.test.tsx">
+    <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="48" lean-forward="true" selection-start-line="13" selection-start-column="48" selection-end-line="13" selection-end-column="48" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="135">
+          <caret line="9" column="40" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
         </state>
       </provider>
     </entry>
