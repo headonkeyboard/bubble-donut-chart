@@ -4,7 +4,7 @@ type BubbleDonutBuilderGroupProps = {
   index: number;
   defaultSize: number;
   color: string;
-  onChange: (sectionIndex: number, size: number) => void;
+  onChange: (groupIndex: number, size: number) => void;
 };
 
 const BubbleDonutBuilderGroup: FunctionComponent<BubbleDonutBuilderGroupProps> = ({
@@ -39,7 +39,7 @@ const BubbleDonutBuilderGroup: FunctionComponent<BubbleDonutBuilderGroupProps> =
         <input
           className="flex-1"
           id={`group_${index}`}
-          name="size"
+          name={`group_size_${index}`}
           onChange={handleSliderChange}
           type="range"
           value={defaultSize}

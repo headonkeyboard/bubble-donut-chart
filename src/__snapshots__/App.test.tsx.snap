@@ -1,0 +1,180 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App App should render builder and chart 1`] = `
+<div>
+  <main
+    class="flex flex-col-reverse lg:flex-row min-h-screen text-gray-100"
+  >
+    <div
+      class="p-4 lg:p-8 lg:w-4/12 lg:self-start lg:max-w-sm"
+    >
+      <div
+        class="space-y-4 font-light"
+      >
+        <div
+          class="space-y-4"
+        >
+          <div
+            class="space-y-4 rounded-lg p-4 bg-gray-900 border border-gray-700 flex flex-col bg-opacity-60"
+          >
+            <div
+              class="flex space-x-4"
+            >
+              <label
+                for="bubble_count"
+              >
+                Bubble Count
+              </label>
+              <input
+                class="flex-1"
+                id="bubble_count"
+                max="1000"
+                min="25"
+                name="bubble_count"
+                type="range"
+                value="200"
+              />
+            </div>
+          </div>
+          <div
+            class="space-y-4 rounded-lg p-4 bg-gray-900 border border-gray-700 flex flex-col bg-opacity-60"
+          >
+            <div
+              class="flex items-center space-x-2"
+            >
+              <div
+                class="flex-1"
+              >
+                <div
+                  class="space-y-2"
+                >
+                  <div
+                    class="flex space-x-4 items-center"
+                  >
+                    <label
+                      class="flex items-center space-x-2"
+                      for="group_0"
+                    >
+                      <span
+                        class="block flex-shrink-0 w-3 h-3 rounded-full"
+                        style="background-color: rgb(102, 194, 165);"
+                      />
+                      <span>
+                        Group #
+                        1
+                      </span>
+                    </label>
+                    <input
+                      class="flex-1"
+                      id="group_0"
+                      max="100"
+                      min="1"
+                      name="group_size_0"
+                      type="range"
+                      value="50"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex items-center space-x-2"
+            >
+              <div
+                class="flex-1"
+              >
+                <div
+                  class="space-y-2"
+                >
+                  <div
+                    class="flex space-x-4 items-center"
+                  >
+                    <label
+                      class="flex items-center space-x-2"
+                      for="group_1"
+                    >
+                      <span
+                        class="block flex-shrink-0 w-3 h-3 rounded-full"
+                        style="background-color: rgb(252, 141, 98);"
+                      />
+                      <span>
+                        Group #
+                        2
+                      </span>
+                    </label>
+                    <input
+                      class="flex-1"
+                      id="group_1"
+                      max="100"
+                      min="1"
+                      name="group_size_1"
+                      type="range"
+                      value="25"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex items-center space-x-2"
+            >
+              <div
+                class="flex-1"
+              >
+                <div
+                  class="space-y-2"
+                >
+                  <div
+                    class="flex space-x-4 items-center"
+                  >
+                    <label
+                      class="flex items-center space-x-2"
+                      for="group_2"
+                    >
+                      <span
+                        class="block flex-shrink-0 w-3 h-3 rounded-full"
+                        style="background-color: rgb(141, 160, 203);"
+                      />
+                      <span>
+                        Group #
+                        3
+                      </span>
+                    </label>
+                    <input
+                      class="flex-1"
+                      id="group_2"
+                      max="100"
+                      min="1"
+                      name="group_size_2"
+                      type="range"
+                      value="25"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button
+              class="font-bold ml-auto text-sm border border-gray-700 rounded px-3 py-2 bg-gray-800 hover:border-gray-100 transition-border duration-300"
+              name="add_group"
+            >
+              Add a new group
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="lg:w-8/12 flex flex-1 flex-shrink-0 flex-col justify-items-stretch"
+    >
+      <div
+        class="flex flex-1 justify-center items-center overflow-hidden"
+      >
+        <svg
+          height="0"
+          width="0"
+        />
+      </div>
+    </div>
+  </main>
+</div>
+`;

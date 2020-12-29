@@ -7,57 +7,39 @@ import React, {
 import BubbleDonutBuilderGroup from "./BubbleDonutBuilderGroup";
 import { groupColors } from "../../utils/colors.utils";
 import Card from "../Card";
+import {newGroupSize, updatedGroupsSize} from "./utils/bubble-donut-builder.utils";
 
 type BubbleDonutBuilderProps = {
   defaultBubbleCount: number;
   /* Group sizes in percent */
   groupSizes: number[];
   onBubbleCountChange: (bubbleCount: number) => void;
-  onChange: (sections: number[]) => void;
+  onGroupsSizeChange: (groups: number[]) => void;
 };
-
-const defaultSection = (sectionCount: number): number =>
-  Math.floor(100 / (sectionCount + 1));
 
 const BubbleDonutBuilder: FunctionComponent<BubbleDonutBuilderProps> = ({
   defaultBubbleCount,
   groupSizes,
-  onChange,
+  onGroupsSizeChange,
   onBubbleCountChange,
 }) => {
-  const sectionsRef = useRef<number[]>(groupSizes);
-
+  const groupsSizeRef = useRef<number[]>(groupSizes);
   const groupsColors = groupColors(groupSizes.length);
 
-  const handleSectionChange = useCallback(
-    (sectionIndex: number, section: number) => {
-      const newSection = Math.max(
-        Math.min(section, 100 - sectionsRef.current.length * 2),
-        2
-      );
-      const otherSectionTotal = Math.max(100 - newSection, 1);
-
-      sectionsRef.current = sectionsRef.current.map(
-        (someSection, someSectionIndex) => {
-          if (someSectionIndex !== sectionIndex) {
-            return otherSectionTotal / (sectionsRef.current.length - 1);
-          } else {
-            return newSection;
-          }
-        }
-      );
-
-      onChange(sectionsRef.current);
+  const handleGroupSizeChange = useCallback(
+    (groupIndex: number, size: number) => {
+        groupsSizeRef.current = updatedGroupsSize(groupsSizeRef.current, groupIndex, size);
+        onGroupsSizeChange(groupsSizeRef.current);
     },
-    [onChange]
+    [onGroupsSizeChange]
   );
 
-  const addSection = useCallback(() => {
-    const newSection = defaultSection(groupSizes.length);
-    sectionsRef.current = [...sectionsRef.current, newSection];
+  const addGroup = useCallback(() => {
+    const newGroup = newGroupSize(groupSizes.length) as number;
+    groupsSizeRef.current = [...groupsSizeRef.current, newGroup];
 
-    handleSectionChange(sectionsRef.current.length - 1, newSection);
-  }, [groupSizes.length, handleSectionChange]);
+    handleGroupSizeChange(groupsSizeRef.current.length - 1, newGroup);
+  }, [groupSizes.length, handleGroupSizeChange]);
 
   const handleBubbleCountChange = useCallback(
     (e: ChangeEvent<HTMLInputElement>) => {
@@ -71,12 +53,12 @@ const BubbleDonutBuilder: FunctionComponent<BubbleDonutBuilderProps> = ({
       <div className="space-y-4">
         <Card>
             <div className="flex space-x-4">
-              <label htmlFor="bubbleCount">Bubble Count</label>
+              <label htmlFor="bubble_count">Bubble Count</label>
               <input
                 onChange={handleBubbleCountChange}
                 className="flex-1"
-                id={"bubbleCount"}
-                name="bubbleCount"
+                id={"bubble_count"}
+                name="bubble_count"
                 type="range"
                 defaultValue={defaultBubbleCount}
                 min="25"
@@ -98,15 +80,16 @@ const BubbleDonutBuilder: FunctionComponent<BubbleDonutBuilderProps> = ({
                   color={groupsColors(
                       `group ${groupIndex + 1}`
                   ) as string}
-                  onChange={handleSectionChange}
+                  onChange={handleGroupSizeChange}
                 />
               </div>
             </div>
           ))}
 
           <button
+              name="add_group"
             className="font-bold ml-auto text-sm border border-gray-700 rounded px-3 py-2 bg-gray-800 hover:border-gray-100 transition-border duration-300"
-            onClick={addSection}
+            onClick={addGroup}
           >
             Add a new group
           </button>

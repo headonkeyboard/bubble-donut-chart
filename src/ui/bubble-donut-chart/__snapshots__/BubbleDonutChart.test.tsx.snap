@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BubbleDonutChart BubbleDonutChart should render circles 1`] = `
+<div>
+  <div
+    class="flex flex-1 justify-center items-center overflow-hidden"
+  >
+    <svg
+      height="0"
+      width="0"
+    >
+      <circle
+        cx="0"
+        cy="0"
+        fill="#66c2a5"
+        opacity="1"
+        r="0"
+      />
+      <circle
+        cx="0"
+        cy="0"
+        fill="#66c2a5"
+        opacity="1"
+        r="0"
+      />
+      <circle
+        cx="0"
+        cy="0"
+        fill="#fc8d62"
+        opacity="1"
+        r="0"
+      />
+      <circle
+        cx="0"
+        cy="0"
+        fill="#fc8d62"
+        opacity="1"
+        r="0"
+      />
+    </svg>
+  </div>
+</div>
+`;

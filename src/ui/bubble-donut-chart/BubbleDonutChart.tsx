@@ -7,14 +7,14 @@ import React, {
 import {
   RawData
 } from "../../lib/core/models/models";
-import {createD3SvgRoot, D3SVGSelection, layoutBubbles, resizeD3ViewportAndBubbles} from "./bubble-donut-d3-layout.utils";
+import {createD3SvgRoot, D3SVGSelection, layoutBubbles, resizeD3ViewportAndBubbles} from "./utils/bubble-donut-d3-layout.utils";
 
 type BubbleDonutChartProps = {
-  bubbles: RawData[];
+  rawData: RawData[];
 };
 
 const BubbleDonutChart: FunctionComponent<BubbleDonutChartProps> = ({
-  bubbles,
+  rawData
 }) => {
   const svgWrapperRef = useRef<HTMLDivElement>(null);
   const d3BubbleSelectionRef: React.MutableRefObject<D3SVGSelection | undefined> = useRef(undefined);
@@ -43,12 +43,12 @@ const BubbleDonutChart: FunctionComponent<BubbleDonutChartProps> = ({
           layoutBubbles(
               d3BubbleSelectionRef.current,
               size,
-              bubbles
+              rawData
           );
         }
       });
     }
-  }, [bubbles]);
+  }, [rawData]);
 
   useEffect(() => {
     function handleResize() {
@@ -64,7 +64,7 @@ const BubbleDonutChart: FunctionComponent<BubbleDonutChartProps> = ({
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, [bubbles]);
+  }, [rawData]);
 
   return (
     <div

@@ -1,9 +1,9 @@
 import * as d3 from "d3";
-import {BubbleWithCoordsAndRadius, RawData} from "../../lib/core/models/models";
-import {BubbleDonut} from "../../lib/core/bubble-donut";
-import {groupColors} from "../../utils/colors.utils";
-import {getRandomInt} from "../../lib/core/random.utils";
-import {DEFAULT_RADIUS, DEFAULT_VIEWPORT, DONUT_CENTER} from "./constants";
+import {BubbleWithCoordsAndRadius, RawData} from "../../../lib/core/models/models";
+import {BubbleDonut} from "../../../lib/core/bubble-donut";
+import {groupColors} from "../../../utils/colors.utils";
+import {getRandomInt} from "../../../lib/core/random.utils";
+import {DEFAULT_RADIUS, DEFAULT_VIEWPORT, DONUT_CENTER} from "../constants";
 
 export type D3SVGSelection = d3.Selection<SVGSVGElement, BubbleWithCoordsAndRadius, null, undefined>;
 

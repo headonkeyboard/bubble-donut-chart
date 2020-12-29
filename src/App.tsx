@@ -56,12 +56,12 @@ function App() {
         <BubbleDonutBuilder
           defaultBubbleCount={defaultBubbleCount}
           groupSizes={groupSizes}
-          onChange={handleGroupSizesChange}
+          onGroupsSizeChange={handleGroupSizesChange}
           onBubbleCountChange={handleBubbleCountChange}
         />
       </div>
       <div className="lg:w-8/12 flex flex-1 flex-shrink-0 flex-col justify-items-stretch">
-        <BubbleDonutChart bubbles={bubbles} />
+        <BubbleDonutChart rawData={bubbles} />
       </div>
     </main>
   );

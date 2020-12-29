@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`createD3SvgRoot 1`] = `
+exports[`bubble donut d3 layout utils createD3SvgRoot 1`] = `
 <div>
   <svg
     height="200"

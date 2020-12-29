@@ -1,0 +1,261 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BubbleDonutBuilder BubbleDonutBuilder should display a BubbleDonutBuilderGroup for each group sizes 1`] = `
+<div
+  className="space-y-4 font-light"
+>
+  <div
+    className="space-y-4"
+  >
+    <div
+      className="space-y-4 rounded-lg p-4 bg-gray-900 border border-gray-700 flex flex-col bg-opacity-60"
+    >
+      <div
+        className="flex space-x-4"
+      >
+        <label
+          htmlFor="bubble_count"
+        >
+          Bubble Count
+        </label>
+        <input
+          className="flex-1"
+          defaultValue={150}
+          id="bubble_count"
+          max="1000"
+          min="25"
+          name="bubble_count"
+          onChange={[Function]}
+          type="range"
+        />
+      </div>
+    </div>
+    <div
+      className="space-y-4 rounded-lg p-4 bg-gray-900 border border-gray-700 flex flex-col bg-opacity-60"
+    >
+      <div
+        className="flex items-center space-x-2"
+      >
+        <div
+          className="flex-1"
+        >
+          <div
+            className="space-y-2"
+          >
+            <div
+              className="flex space-x-4 items-center"
+            >
+              <label
+                className="flex items-center space-x-2"
+                htmlFor="group_0"
+              >
+                <span
+                  className="block flex-shrink-0 w-3 h-3 rounded-full"
+                  style={
+                    Object {
+                      "backgroundColor": "#66c2a5",
+                    }
+                  }
+                />
+                <span>
+                  Group #
+                  1
+                </span>
+              </label>
+              <input
+                className="flex-1"
+                id="group_0"
+                max="100"
+                min="1"
+                name="group_size_0"
+                onChange={[Function]}
+                type="range"
+                value={25}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="flex items-center space-x-2"
+      >
+        <div
+          className="flex-1"
+        >
+          <div
+            className="space-y-2"
+          >
+            <div
+              className="flex space-x-4 items-center"
+            >
+              <label
+                className="flex items-center space-x-2"
+                htmlFor="group_1"
+              >
+                <span
+                  className="block flex-shrink-0 w-3 h-3 rounded-full"
+                  style={
+                    Object {
+                      "backgroundColor": "#fc8d62",
+                    }
+                  }
+                />
+                <span>
+                  Group #
+                  2
+                </span>
+              </label>
+              <input
+                className="flex-1"
+                id="group_1"
+                max="100"
+                min="1"
+                name="group_size_1"
+                onChange={[Function]}
+                type="range"
+                value={70}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="flex items-center space-x-2"
+      >
+        <div
+          className="flex-1"
+        >
+          <div
+            className="space-y-2"
+          >
+            <div
+              className="flex space-x-4 items-center"
+            >
+              <label
+                className="flex items-center space-x-2"
+                htmlFor="group_2"
+              >
+                <span
+                  className="block flex-shrink-0 w-3 h-3 rounded-full"
+                  style={
+                    Object {
+                      "backgroundColor": "#8da0cb",
+                    }
+                  }
+                />
+                <span>
+                  Group #
+                  3
+                </span>
+              </label>
+              <input
+                className="flex-1"
+                id="group_2"
+                max="100"
+                min="1"
+                name="group_size_2"
+                onChange={[Function]}
+                type="range"
+                value={42}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="flex items-center space-x-2"
+      >
+        <div
+          className="flex-1"
+        >
+          <div
+            className="space-y-2"
+          >
+            <div
+              className="flex space-x-4 items-center"
+            >
+              <label
+                className="flex items-center space-x-2"
+                htmlFor="group_3"
+              >
+                <span
+                  className="block flex-shrink-0 w-3 h-3 rounded-full"
+                  style={
+                    Object {
+                      "backgroundColor": "#e78ac3",
+                    }
+                  }
+                />
+                <span>
+                  Group #
+                  4
+                </span>
+              </label>
+              <input
+                className="flex-1"
+                id="group_3"
+                max="100"
+                min="1"
+                name="group_size_3"
+                onChange={[Function]}
+                type="range"
+                value={24}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="flex items-center space-x-2"
+      >
+        <div
+          className="flex-1"
+        >
+          <div
+            className="space-y-2"
+          >
+            <div
+              className="flex space-x-4 items-center"
+            >
+              <label
+                className="flex items-center space-x-2"
+                htmlFor="group_4"
+              >
+                <span
+                  className="block flex-shrink-0 w-3 h-3 rounded-full"
+                  style={
+                    Object {
+                      "backgroundColor": "#a6d854",
+                    }
+                  }
+                />
+                <span>
+                  Group #
+                  5
+                </span>
+              </label>
+              <input
+                className="flex-1"
+                id="group_4"
+                max="100"
+                min="1"
+                name="group_size_4"
+                onChange={[Function]}
+                type="range"
+                value={54}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <button
+        className="font-bold ml-auto text-sm border border-gray-700 rounded px-3 py-2 bg-gray-800 hover:border-gray-100 transition-border duration-300"
+        name="add_group"
+        onClick={[Function]}
+      >
+        Add a new group
+      </button>
+    </div>
+  </div>
+</div>
+`;

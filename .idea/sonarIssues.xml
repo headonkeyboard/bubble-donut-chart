@@ -58,6 +58,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/App.test.tsx">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/App.tsx">
           <value>
             <set />
@@ -123,7 +128,17 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/ui/bubble-donut-chart/BubbleDonutChart.test.tsx">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/ui/bubble-donut-chart/BubbleDonutChart.tsx">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ui/bubble-donut-chart/__snapshots__/BubbleDonutChart.test.tsx.snap">
           <value>
             <set />
           </value>
@@ -153,7 +168,27 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/ui/bubble-donut-chart/utils/bubble-donut-d3-layout.utils.test.ts">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ui/builder/BubbleDonutBuilder.test.tsx">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/ui/builder/BubbleDonutBuilder.tsx">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ui/builder/BubbleDonutBuilderGroup.test.ts">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ui/builder/BubbleDonutBuilderGroup.test.tsx">
           <value>
             <set />
           </value>
@@ -164,6 +199,21 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/ui/builder/BubbleDonutBuilderSection.tsx">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ui/builder/bubble-donut-builder.utils.ts">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ui/builder/utils/bubble-donut-builder.utils.test.ts">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/ui/builder/utils/bubble-donut-builder.utils.ts">
           <value>
             <set />
           </value>
