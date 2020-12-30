@@ -41,15 +41,18 @@ class BubbleDonut {
 
     const bubblesPerSection: {
       [key: string]: Array<RawData>;
-    } = this.bubbles.reduce((acc: { [key: string]: Array<RawData> }, bubble) => {
-      if (undefined === acc[bubble.group]) {
-        acc[bubble.group] = [];
-      }
+    } = this.bubbles.reduce(
+      (acc: { [key: string]: Array<RawData> }, bubble) => {
+        if (undefined === acc[bubble.group]) {
+          acc[bubble.group] = [];
+        }
 
-      acc[bubble.group].push(bubble);
+        acc[bubble.group].push(bubble);
 
-      return acc;
-    }, {});
+        return acc;
+      },
+      {}
+    );
 
     const groupKeys = Object.keys(bubblesPerSection);
     groupKeys.sort((a, b) => {
@@ -244,7 +247,7 @@ class BubbleDonut {
     }
 
     return bubbles;
-  };
+  }
 }
 
 export { BubbleDonut };

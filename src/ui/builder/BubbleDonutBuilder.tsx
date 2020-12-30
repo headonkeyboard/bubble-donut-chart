@@ -7,7 +7,10 @@ import React, {
 import BubbleDonutBuilderGroup from "./BubbleDonutBuilderGroup";
 import { groupColors } from "../../utils/colors.utils";
 import Card from "../Card";
-import {newGroupSize, updatedGroupsSize} from "./utils/bubble-donut-builder.utils";
+import {
+  newGroupSize,
+  updatedGroupsSize,
+} from "./utils/bubble-donut-builder.utils";
 
 type BubbleDonutBuilderProps = {
   defaultBubbleCount: number;
@@ -28,8 +31,12 @@ const BubbleDonutBuilder: FunctionComponent<BubbleDonutBuilderProps> = ({
 
   const handleGroupSizeChange = useCallback(
     (groupIndex: number, size: number) => {
-        groupsSizeRef.current = updatedGroupsSize(groupsSizeRef.current, groupIndex, size);
-        onGroupsSizeChange(groupsSizeRef.current);
+      groupsSizeRef.current = updatedGroupsSize(
+        groupsSizeRef.current,
+        groupIndex,
+        size
+      );
+      onGroupsSizeChange(groupsSizeRef.current);
     },
     [onGroupsSizeChange]
   );
@@ -52,19 +59,19 @@ const BubbleDonutBuilder: FunctionComponent<BubbleDonutBuilderProps> = ({
     <div className="space-y-4 font-light">
       <div className="space-y-4">
         <Card>
-            <div className="flex space-x-4">
-              <label htmlFor="bubble_count">Bubble Count</label>
-              <input
-                onChange={handleBubbleCountChange}
-                className="flex-1"
-                id={"bubble_count"}
-                name="bubble_count"
-                type="range"
-                defaultValue={defaultBubbleCount}
-                min="25"
-                max="1000"
-              />
-            </div>
+          <div className="flex space-x-4">
+            <label htmlFor="bubble_count">Bubble Count</label>
+            <input
+              onChange={handleBubbleCountChange}
+              className="flex-1"
+              id={"bubble_count"}
+              name="bubble_count"
+              type="range"
+              defaultValue={defaultBubbleCount}
+              min="25"
+              max="1000"
+            />
+          </div>
         </Card>
 
         <Card>
@@ -77,9 +84,7 @@ const BubbleDonutBuilder: FunctionComponent<BubbleDonutBuilderProps> = ({
                 <BubbleDonutBuilderGroup
                   index={groupIndex}
                   defaultSize={groupSize}
-                  color={groupsColors(
-                      `group ${groupIndex + 1}`
-                  ) as string}
+                  color={groupsColors(`group ${groupIndex + 1}`) as string}
                   onChange={handleGroupSizeChange}
                 />
               </div>
@@ -87,7 +92,7 @@ const BubbleDonutBuilder: FunctionComponent<BubbleDonutBuilderProps> = ({
           ))}
 
           <button
-              name="add_group"
+            name="add_group"
             className="font-bold ml-auto text-sm border border-gray-700 rounded px-3 py-2 bg-gray-800 hover:border-gray-100 transition-border duration-300"
             onClick={addGroup}
           >

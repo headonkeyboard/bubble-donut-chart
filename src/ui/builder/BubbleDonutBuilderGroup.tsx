@@ -1,4 +1,9 @@
-import React, { ChangeEvent, FunctionComponent, useCallback, useRef } from "react";
+import React, {
+  ChangeEvent,
+  FunctionComponent,
+  useCallback,
+  useRef,
+} from "react";
 
 type BubbleDonutBuilderGroupProps = {
   index: number;
@@ -27,14 +32,17 @@ const BubbleDonutBuilderGroup: FunctionComponent<BubbleDonutBuilderGroupProps> =
   return (
     <div className="space-y-2">
       <div className="flex space-x-4 items-center">
-        <label htmlFor={`group_${index}`} className="flex items-center space-x-2">
-            <span
-                className="block flex-shrink-0 w-3 h-3 rounded-full"
-                style={{
-                    backgroundColor: color,
-                }}
-            />
-            <span>Group #{index + 1}</span>
+        <label
+          htmlFor={`group_${index}`}
+          className="flex items-center space-x-2"
+        >
+          <span
+            className="block flex-shrink-0 w-3 h-3 rounded-full"
+            style={{
+              backgroundColor: color,
+            }}
+          />
+          <span>Group #{index + 1}</span>
         </label>
         <input
           className="flex-1"
