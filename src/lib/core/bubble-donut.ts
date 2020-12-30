@@ -4,18 +4,16 @@ import {
   Grid,
   GridEdges,
   Point,
-  Section,
-} from "./models/models";
-import { getGridPointPosition } from "./utils/coords.utils";
-import {
-  generateGrid,
-  getBubblePositionAndRadius,
-  getAllBubbleWeightSum,
-} from "./utils/bubble.utils";
+  DonutSection,
+  MaxDistancePoint,
+} from "./models";
+import { gridPointPositionToPixels } from "./utils/coords.utils";
+import { generateGrid, getBubblePositionAndRadius } from "./utils/bubble.utils";
+import { getRawDataByGroup, getRawDataWeightSum } from "./utils/raw-data.utils";
 
 class BubbleDonut {
-  sections = new Map<string, Section>();
-  bubbles: RawData[] = [];
+  sections = new Map<string, DonutSection>();
+  rawData: RawData[] = [];
 
   donutArea = -1;
   allBubbleWeightSum = 0;
@@ -23,68 +21,72 @@ class BubbleDonut {
   constructor(
     public innerRadius: number,
     public outerRadius: number,
-    bubbles: RawData[] = []
+    rawData: RawData[] = []
   ) {
-    this.updateRadius(innerRadius, outerRadius);
+    this.donutArea = this.getDonutArea();
 
-    if (bubbles.length > 0) {
-      this.loadBubbles(bubbles);
+    if (rawData.length > 0) {
+      this.loadRawData(rawData);
     }
   }
 
-  loadBubbles(bubbles: RawData[]): void {
-    this.bubbles = bubbles;
-    this.bubbles.sort((a, b) => b.weight - a.weight);
+  /**
+   * Format raw data to bubble sections
+   *
+   * @param rawData entries that will be formatted as Bubble Donut
+   */
+  loadRawData(rawData: RawData[]): void {
+    this.sections.clear();
 
-    this.allBubbleWeightSum = getAllBubbleWeightSum(this.bubbles);
-    this.sections = new Map();
+    this.rawData = rawData;
 
-    const bubblesPerSection: {
-      [key: string]: Array<RawData>;
-    } = this.bubbles.reduce(
-      (acc: { [key: string]: Array<RawData> }, bubble) => {
-        if (undefined === acc[bubble.group]) {
-          acc[bubble.group] = [];
-        }
+    // bubble positioning algorithm needs data to be sorted by their weight with biggest weight first
+    this.rawData.sort((a, b) => b.weight - a.weight);
 
-        acc[bubble.group].push(bubble);
+    // each bubble radius is proportional to the sum of all data weight
+    this.allBubbleWeightSum = getRawDataWeightSum(this.rawData);
 
-        return acc;
-      },
-      {}
-    );
+    const rawDataByGroup = getRawDataByGroup(this.rawData);
 
-    const groupKeys = Object.keys(bubblesPerSection);
-    groupKeys.sort((a, b) => {
-      const sectionANumber = a.replace("group ", "");
-      const sectionBNumber = b.replace("group ", "");
+    // keep group order consistent to always display groups in the same place of the bubble donut
+    const groupKeys = Array.from(rawDataByGroup.keys());
+    groupKeys.sort();
 
-      return parseInt(sectionANumber, 10) - parseInt(sectionBNumber, 10);
-    });
-
-    groupKeys.forEach((sectionKey) => {
-      const sectionBubbles = bubblesPerSection[sectionKey];
-      const sectionRatio =
-        getAllBubbleWeightSum(sectionBubbles) / this.allBubbleWeightSum;
-      this.addDonutSection(sectionKey, sectionRatio, sectionBubbles);
+    groupKeys.forEach((groupKey) => {
+      const section = this.newDonutSection(
+        groupKey,
+        rawDataByGroup.get(groupKey) as RawData[]
+      );
+      this.sections.set(groupKey, section);
     });
   }
 
-  updateRadius(innerRadius: number, outerRadius: number): void {
-    this.innerRadius = innerRadius;
-    this.outerRadius = outerRadius;
+  /**
+   * Returns a flat array of BubbleWithCoordsAndRadius extracted from each donut sections
+   */
+  getBubbles(): BubbleWithCoordsAndRadius[] {
+    const bubbles: BubbleWithCoordsAndRadius[] = [];
 
-    const externalCircleArea = Math.PI * Math.pow(outerRadius, 2);
-    const innerCircleArea = Math.PI * Math.pow(innerRadius, 2);
+    for (let [, bubbleSection] of this.sections) {
+      bubbleSection.bubbles.forEach((bubble) => {
+        bubbles.push(bubble);
+      });
+    }
 
-    this.donutArea = externalCircleArea - innerCircleArea;
+    return bubbles;
   }
 
-  private addDonutSection(
-    sectionKey: string,
-    ratio: number,
-    bubbles: Array<RawData>
-  ): Section {
+  /**
+   * Return a newly created Donut Section
+   *
+   * @param groupKey group value from rawData entries
+   * @param sectionRawData entries that will be formatted as Bubble Donut
+   */
+  private newDonutSection(
+    groupKey: string,
+    sectionRawData: RawData[]
+  ): DonutSection {
+    const ratio = getRawDataWeightSum(sectionRawData) / this.allBubbleWeightSum;
     const previousSections = Array.from(this.sections);
 
     let startAngle = 0;
@@ -94,81 +96,16 @@ class BubbleDonut {
     }
 
     const endAngle = startAngle + ratio * 2 * Math.PI;
-
-    const gridLength = Math.min(Math.max(bubbles.length, 10), 100);
-
-    const gridEdges: GridEdges = {
-      top: [],
-      right: [],
-      bottom: [],
-      left: [],
-    };
-
-    const innerRatio = Math.ceil(this.outerRadius / this.innerRadius);
-
-    for (let i = 0; i <= gridLength; i++) {
-      gridEdges.left.push(
-        getGridPointPosition(
-          i,
-          0,
-          startAngle,
-          endAngle,
-          gridLength,
-          this.innerRadius,
-          this.outerRadius
-        )
-      ); // side edge
-      gridEdges.right.push(
-        getGridPointPosition(
-          i,
-          gridLength,
-          startAngle,
-          endAngle,
-          gridLength,
-          this.innerRadius,
-          this.outerRadius
-        )
-      ); // side edge
-
-      // reduce some edges to reduce compute time during grid generation
-      if (0 === Math.round((i % innerRatio) / 2)) {
-        gridEdges.bottom.push(
-          getGridPointPosition(
-            0,
-            i,
-            startAngle,
-            endAngle,
-            gridLength,
-            this.innerRadius,
-            this.outerRadius
-          )
-        ); // inner edge
-      }
-
-      gridEdges.top.push(
-        getGridPointPosition(
-          gridLength,
-          i,
-          startAngle,
-          endAngle,
-          gridLength,
-          this.innerRadius,
-          this.outerRadius
-        )
-      ); // outer edge
-    }
-
+    const gridLength = Math.min(Math.max(sectionRawData.length, 10), 100);
+    const gridEdges = this.getGridEdges(gridLength, startAngle, endAngle);
     const bubblesWithCoordsAndRadius: BubbleWithCoordsAndRadius[] = [];
 
-    let grid: Grid,
-      maxDistance: number,
-      maxDistanceX: number,
-      maxDistanceY: number;
+    let grid: Grid, maxDistancePoint: MaxDistancePoint;
 
     const gridPointPositionsCache = new Map<number, Point>();
 
-    // compute bubbles position and radius
-    ({ grid, maxDistance, maxDistanceX, maxDistanceY } = generateGrid(
+    // each grid point will be mapped to it's min distance with an edge of the section
+    ({ grid, maxDistancePoint } = generateGrid(
       gridEdges,
       gridLength,
       startAngle,
@@ -178,10 +115,12 @@ class BubbleDonut {
       gridPointPositionsCache
     ));
 
-    bubbles.forEach((bubble) => {
-      const maxDistancePoint = getGridPointPosition(
-        maxDistanceX,
-        maxDistanceY,
+    sectionRawData.forEach((bubble) => {
+      // find a point on the grid which have the max available distance from any obstacle
+      // this will be the center of the bubble
+      const maxDistancePosition = gridPointPositionToPixels(
+        maxDistancePoint.x,
+        maxDistancePoint.y,
         startAngle,
         endAngle,
         gridLength,
@@ -189,14 +128,16 @@ class BubbleDonut {
         this.outerRadius
       );
 
+      // apply a bit of randomness from grid position
       const { bubbleX, bubbleY, bubbleR } = getBubblePositionAndRadius(
-        maxDistance,
-        maxDistancePoint,
+        maxDistancePoint.maxDistance,
+        maxDistancePosition,
         bubble.weight,
         this.donutArea,
         this.allBubbleWeightSum
       );
 
+      // store newly "added" bubble to compute distance from it on next grid refresh
       bubblesWithCoordsAndRadius.push({
         ...bubble,
         x: bubbleX,
@@ -204,7 +145,8 @@ class BubbleDonut {
         r: bubbleR,
       });
 
-      ({ grid, maxDistance, maxDistanceX, maxDistanceY } = generateGrid(
+      // refresh grid to map items with their min distance from any obstacle (an edge or another bubble)
+      ({ grid, maxDistancePoint } = generateGrid(
         gridEdges,
         gridLength,
         startAngle,
@@ -217,8 +159,8 @@ class BubbleDonut {
       ));
     });
 
-    const section: Section = {
-      id: sectionKey,
+    return {
+      id: groupKey,
       ratio,
       bubbles: bubblesWithCoordsAndRadius,
       startAngle,
@@ -226,27 +168,89 @@ class BubbleDonut {
       gridLength,
       edges: gridEdges,
     };
-
-    this.sections.set(sectionKey, section);
-
-    return section;
   }
 
   /**
-   * Returns a flat array of BubbleWithCoordsAndRadius extracted from each groups
+   * Returns many points all around a section.
    *
-   * @param bubbleDonutSections
+   * @param gridLength
+   * @param startAngle
+   * @param endAngle
    */
-  getBubbles(): BubbleWithCoordsAndRadius[] {
-    const bubbles: BubbleWithCoordsAndRadius[] = [];
+  private getGridEdges(
+    gridLength: number,
+    startAngle: number,
+    endAngle: number
+  ): GridEdges {
+    const gridEdges: GridEdges = {
+      top: [],
+      right: [],
+      bottom: [],
+      left: [],
+    };
 
-    for (let [, bubbleSection] of this.sections) {
-      bubbleSection.bubbles.forEach((bubble) => {
-        bubbles.push(bubble);
-      });
+    for (let i = 0; i <= gridLength; i++) {
+      gridEdges.left.push(
+        gridPointPositionToPixels(
+          i,
+          0,
+          startAngle,
+          endAngle,
+          gridLength,
+          this.innerRadius,
+          this.outerRadius
+        )
+      ); // side edge
+
+      gridEdges.right.push(
+        gridPointPositionToPixels(
+          i,
+          gridLength,
+          startAngle,
+          endAngle,
+          gridLength,
+          this.innerRadius,
+          this.outerRadius
+        )
+      ); // side edge
+
+      // reduce some edges to reduce compute time during grid generation
+      gridEdges.bottom.push(
+        gridPointPositionToPixels(
+          0,
+          i,
+          startAngle,
+          endAngle,
+          gridLength,
+          this.innerRadius,
+          this.outerRadius
+        )
+      ); // inner edge
+
+      gridEdges.top.push(
+        gridPointPositionToPixels(
+          gridLength,
+          i,
+          startAngle,
+          endAngle,
+          gridLength,
+          this.innerRadius,
+          this.outerRadius
+        )
+      ); // outer edge
     }
 
-    return bubbles;
+    return gridEdges;
+  }
+
+  /**
+   * Returns donut area by subtracting the area of the outer disc with the area of the inner disc
+   */
+  private getDonutArea(): number {
+    const externalCircleArea = Math.PI * Math.pow(this.outerRadius, 2);
+    const innerCircleArea = Math.PI * Math.pow(this.innerRadius, 2);
+
+    return externalCircleArea - innerCircleArea;
   }
 }
 

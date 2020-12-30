@@ -4,7 +4,7 @@ import React, {
   FunctionComponent,
   useLayoutEffect,
 } from "react";
-import { RawData } from "../../lib/core/models/models";
+import { RawData } from "../../lib/core/models";
 import {
   createD3SvgRoot,
   D3SVGSelection,

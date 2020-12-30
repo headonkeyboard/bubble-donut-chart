@@ -1,7 +1,10 @@
-import { Grid, Point } from "../models/models";
+import { Point } from "../models";
 
 /**
  * Use Pythagorean theorem to return a distance (in pixels) between two point
+ *
+ * @param coord1
+ * @param coord2
  */
 const getDistance = (
   coord1: Required<Point>,
@@ -15,8 +18,8 @@ const getDistance = (
 /**
  * Returns the min distance between a list of points (edges Param) and point
  *
- * @param points Array of positions
- * @param point The starting position
+ * @param points Array of positions in pixels
+ * @param point The starting position in pixels
  */
 const getMinDistance = (points: Point[], point: Required<Point>) => {
   const edgesDistances = points.reduce((acc: Array<number>, edge) => {
@@ -26,56 +29,6 @@ const getMinDistance = (points: Point[], point: Required<Point>) => {
   }, []);
 
   return Math.min(...edgesDistances);
-};
-
-/**
- * Return a couple of the max distance found in grid with it's corresponding grid coordinates
- *
- * @param grid Donut section grid
- * @param startAngle Donut section start angle in Radian
- * @param endAngle Donut section end angle in Radian
- * @param gridLength Number of grid points in a row or in a column
- * @param innerRadius Donut inner radius
- * @param outerRadius Donut outer radius
- */
-const getMaxDistance = (
-  grid: Grid,
-  startAngle: number,
-  endAngle: number,
-  gridLength: number,
-  innerRadius: number,
-  outerRadius: number
-): { maxDistance: number; maxDistanceCoords: Point } => {
-  let maxDistance = grid[0];
-  let maxDistanceCoords = getGridPointPosition(
-    0,
-    0,
-    startAngle,
-    endAngle,
-    gridLength,
-    innerRadius,
-    outerRadius
-  );
-
-  for (let i = 0; i < grid.length; i++) {
-    const x = i % gridLength;
-    const y = i / gridLength;
-
-    if (grid[i] > maxDistance) {
-      maxDistance = grid[i];
-      maxDistanceCoords = getGridPointPosition(
-        x,
-        y,
-        startAngle,
-        endAngle,
-        gridLength,
-        innerRadius,
-        outerRadius
-      );
-    }
-  }
-
-  return { maxDistance, maxDistanceCoords };
 };
 
 /**
@@ -89,7 +42,7 @@ const getMaxDistance = (
  * @param innerRadius Donut inner radius
  * @param outerRadius Donut outer radius
  */
-const getGridPointPosition = (
+const gridPointPositionToPixels = (
   x: number,
   y: number,
   startAngle: number,
@@ -109,17 +62,4 @@ const getGridPointPosition = (
   };
 };
 
-const getPointWithRatio = (point: Point, ratio: number) => {
-  return {
-    x: point.x * ratio,
-    y: point.y * ratio,
-  };
-};
-
-export {
-  getDistance,
-  getGridPointPosition,
-  getMaxDistance,
-  getMinDistance,
-  getPointWithRatio,
-};
+export { getDistance, gridPointPositionToPixels, getMinDistance };

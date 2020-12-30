@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import BubbleDonutChart from "./ui/bubble-donut-chart/BubbleDonutChart";
-import { getBubbles } from "./lib/core/random.utils";
-import { RawData } from "./lib/core/models/models";
+import { getRandomRawData } from "./utils/random.utils";
+import { RawData } from "./lib/core/models";
 import BubbleDonutBuilder from "./ui/builder/BubbleDonutBuilder";
 
 const defaultBubbleCount = 200;
@@ -23,7 +23,7 @@ function App() {
       }
 
       timeoutRef.current = setTimeout(() => {
-        const someBubbles = getBubbles(bubbleCount, sections);
+        const someBubbles = getRandomRawData(bubbleCount, sections);
         setBubbles(someBubbles);
       }, 100);
     },

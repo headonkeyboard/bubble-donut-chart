@@ -118,6 +118,16 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/lib/core/utils/coords.utils.ts">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/lib/core/utils/raw-data.utils.ts">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/ui/BubbleDonutChart.tsx">
           <value>
             <set />
@@ -173,6 +183,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/ui/bubble-donut-chart/utils/bubble-donut-d3-layout.utils.ts">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/ui/builder/BubbleDonutBuilder.test.tsx">
           <value>
             <set />
@@ -224,6 +239,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/utils/colors.utils.ts">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/utils/random.utils.ts">
           <value>
             <set />
           </value>

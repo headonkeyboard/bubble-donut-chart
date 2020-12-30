@@ -1,6 +1,13 @@
-import { RawData, Coord, Grid, GridEdges, Point } from "../models/models";
 import {
-  getGridPointPosition,
+  RawData,
+  Coord,
+  Grid,
+  GridEdges,
+  Point,
+  MaxDistancePoint,
+} from "../models";
+import {
+  gridPointPositionToPixels,
   getDistance,
   getMinDistance,
 } from "./coords.utils";
@@ -22,17 +29,6 @@ const getBubbleRadius = (
 };
 
 /**
- * Return sum of all bubble weight
- *
- * @param bubbles Array of bubble data
- */
-const getAllBubbleWeightSum = (bubbles: RawData[]): number => {
-  return bubbles.reduce((acc, bubble) => {
-    return acc + bubble.weight;
-  }, 0);
-};
-
-/**
  * Generate an array representing a donut section grid
  * Each item index is a grid coordinate
  * Each item value is equal to the minimum distance with an obstacle (edge or any other bubble)
@@ -43,6 +39,8 @@ const getAllBubbleWeightSum = (bubbles: RawData[]): number => {
  * @param endAngle The section end angle in rad
  * @param innerRadius The donut inner radius in pixels
  * @param outerRadius The donut outer radius in pixels
+ * @param gridPointPositionsCache
+ * @param grid
  * @param bubbleCoords Positions of bubbles already in grid
  */
 const generateGrid = (
@@ -57,9 +55,7 @@ const generateGrid = (
   bubbleCoords: Array<Coord> = []
 ): {
   grid: Grid;
-  maxDistance: number;
-  maxDistanceX: number;
-  maxDistanceY: number;
+  maxDistancePoint: MaxDistancePoint;
 } => {
   let maxDistance = 0;
   let maxDistanceX = 0;
@@ -74,14 +70,14 @@ const generateGrid = (
     }
 
     const x = i % gridLength;
-    const y = i / gridLength;
+    const y = Math.floor(i / gridLength);
 
     let gridPointCoord!: Point;
 
     if (gridPointPositionsCache.has(i)) {
       gridPointCoord = gridPointPositionsCache.get(i) as Point;
     } else {
-      gridPointCoord = getGridPointPosition(
+      gridPointCoord = gridPointPositionToPixels(
         x,
         y,
         startAngle,
@@ -132,19 +128,22 @@ const generateGrid = (
     grid[i] = minDistance;
   }
 
-  return { grid, maxDistance, maxDistanceX, maxDistanceY };
+  return {
+    grid,
+    maxDistancePoint: {
+      maxDistance,
+      x: maxDistanceX,
+      y: maxDistanceY,
+    },
+  };
 };
 
 /**
  * Return bubble coordinates and radius in pixels
  *
- * @param gridLength The grid size
- * @param startAngle The section start angle in rad
- * @param endAngle The section end angle in rad
+ * @param maxDistance
+ * @param maxDistanceCoords
  * @param value The bubble value (the higher its value, the higher its radius)
- * @param grid An array in which each items is a grid point and is value is the closest distance with an obstacle (bubble or edge)
- * @param innerRadius The donut inner radius in pixels
- * @param outerRadius The donut outer radius in pixels
  * @param donutArea The computed area of the donut
  * @param totalBubbleValues The sum of all bubble value
  */
@@ -158,7 +157,7 @@ const getBubblePositionAndRadius = (
   let bubbleRadius = getBubbleRadius(value, donutArea, totalBubbleValues);
 
   if (maxDistance - bubbleRadius < 0) {
-    bubbleRadius = maxDistance - 2;
+    bubbleRadius = maxDistance - 1;
   }
 
   const offset = (maxDistance - bubbleRadius) / 2;
@@ -169,13 +168,8 @@ const getBubblePositionAndRadius = (
   return {
     bubbleX: maxDistanceCoords.x + offsetX * Math.random(),
     bubbleY: maxDistanceCoords.y + offsetY * Math.random(),
-    bubbleR: bubbleRadius,
+    bubbleR: bubbleRadius >= 0 ? bubbleRadius : 1,
   };
 };
 
-export {
-  generateGrid,
-  getBubbleRadius,
-  getAllBubbleWeightSum,
-  getBubblePositionAndRadius,
-};
+export { generateGrid, getBubbleRadius, getBubblePositionAndRadius };
