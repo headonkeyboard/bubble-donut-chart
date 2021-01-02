@@ -21,6 +21,7 @@ exports[`App App should render builder and chart 1`] = `
               class="flex space-x-4"
             >
               <label
+                class="whitespace-nowrap"
                 for="bubble_count"
               >
                 Bubble Count
@@ -28,7 +29,7 @@ exports[`App App should render builder and chart 1`] = `
               <input
                 class="flex-1"
                 id="bubble_count"
-                max="1000"
+                max="2000"
                 min="25"
                 name="bubble_count"
                 type="range"
@@ -52,7 +53,7 @@ exports[`App App should render builder and chart 1`] = `
                     class="flex space-x-4 items-center"
                   >
                     <label
-                      class="flex items-center space-x-2"
+                      class="flex flex-shrink-0 items-center space-x-2"
                       for="group_0"
                     >
                       <span
@@ -90,7 +91,7 @@ exports[`App App should render builder and chart 1`] = `
                     class="flex space-x-4 items-center"
                   >
                     <label
-                      class="flex items-center space-x-2"
+                      class="flex flex-shrink-0 items-center space-x-2"
                       for="group_1"
                     >
                       <span
@@ -128,7 +129,7 @@ exports[`App App should render builder and chart 1`] = `
                     class="flex space-x-4 items-center"
                   >
                     <label
-                      class="flex items-center space-x-2"
+                      class="flex flex-shrink-0 items-center space-x-2"
                       for="group_2"
                     >
                       <span

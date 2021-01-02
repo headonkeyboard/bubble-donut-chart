@@ -8,7 +8,7 @@ exports[`BubbleDonutBuilderGroup BubbleDonutBuilderGroup should display a slider
     className="flex space-x-4 items-center"
   >
     <label
-      className="flex items-center space-x-2"
+      className="flex flex-shrink-0 items-center space-x-2"
       htmlFor="group_1"
     >
       <span

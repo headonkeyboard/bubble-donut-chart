@@ -17,7 +17,7 @@ export type D3SVGSelection = d3.Selection<
  *
  * @param data
  */
-const rawDataToBubbleDonut = (data: RawData[]): BubbleDonut => {
+export const rawDataToBubbleDonut = (data: RawData[]): BubbleDonut => {
   return new BubbleDonut(DEFAULT_RADIUS * 0.2, DEFAULT_RADIUS, data);
 };
 
@@ -40,11 +40,11 @@ const viewportScaleRange = (width: number) => {
 export function layoutBubbles(
   selection: D3SVGSelection,
   width: number,
-  data: RawData[]
+  bubbles: BubbleWithCoordsAndRadius[],
+  groupCount: number
 ) {
-  const bubbleDonut = rawDataToBubbleDonut(data);
-  const d3Bubbles = bubbleDonut.getBubbles();
-  const groupsColors = groupColors(bubbleDonut.sections.size);
+  const d3Bubbles = bubbles;
+  const groupsColors = groupColors(groupCount);
   const viewportScale = viewportScaleRange(width);
   const d3BubbleSelection = selection
     .selectAll<SVGCircleElement, BubbleWithCoordsAndRadius>("circle")

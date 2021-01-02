@@ -14,6 +14,7 @@
     "@types/react": "^16.9.53",
     "@types/react-dom": "^16.9.8",
     "autoprefixer": "^9",
+    "craco-worker-loader": "^1.0.0",
     "d3": "^6.3.1",
     "d3-scale-chromatic": "^2.0.0",
     "eslint-config-prettier": "^7.1.0",
@@ -24,7 +25,9 @@
     "react-scripts": "4.0.1",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "typescript": "^4.0.3",
-    "web-vitals": "^0.2.4"
+    "web-vitals": "^0.2.4",
+    "worker-loader": "^3.0.7",
+    "worker-plugin": "^5.0.0"
   },
   "scripts": {
     "start": "craco start",

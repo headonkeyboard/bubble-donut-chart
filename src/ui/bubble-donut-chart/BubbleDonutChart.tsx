@@ -4,7 +4,7 @@ import React, {
   FunctionComponent,
   useLayoutEffect,
 } from "react";
-import { RawData } from "../../lib/core/models";
+import {RawData} from "../../lib/core/models";
 import {
   createD3SvgRoot,
   D3SVGSelection,
@@ -12,9 +12,17 @@ import {
   resizeD3ViewportAndBubbles,
 } from "./utils/bubble-donut-d3-layout.utils";
 
+// eslint-disable-next-line
+import BubbleDonutWorker from "worker-loader!../../bubble.worker";
+
 type BubbleDonutChartProps = {
   rawData: RawData[];
 };
+
+const getSvgWrapperSize = (svgWrapper: HTMLDivElement) => Math.min(
+    svgWrapper.clientWidth,
+    svgWrapper.clientHeight
+);
 
 const BubbleDonutChart: FunctionComponent<BubbleDonutChartProps> = ({
   rawData,
@@ -24,12 +32,12 @@ const BubbleDonutChart: FunctionComponent<BubbleDonutChartProps> = ({
     D3SVGSelection | undefined
   > = useRef(undefined);
 
+  const workerRef = useRef<BubbleDonutWorker | undefined>(undefined);
+
   useLayoutEffect(() => {
     if (null !== svgWrapperRef.current) {
-      const size = Math.min(
-        svgWrapperRef.current.clientWidth,
-        svgWrapperRef.current.clientHeight
-      );
+      const size = getSvgWrapperSize(svgWrapperRef.current);
+
       d3BubbleSelectionRef.current = createD3SvgRoot(
         svgWrapperRef.current,
         size
@@ -43,33 +51,13 @@ const BubbleDonutChart: FunctionComponent<BubbleDonutChartProps> = ({
     }
   }, []);
 
-  /* Bubbles need to layout on every changes */
-  useEffect(() => {
-    if (svgWrapperRef.current) {
-      const size = Math.min(
-        svgWrapperRef.current.clientWidth,
-        svgWrapperRef.current.clientHeight
-      );
-
-      // priorize ui interactions as bubble layout might take some time
-      setTimeout(() => {
-        if (d3BubbleSelectionRef.current) {
-          layoutBubbles(d3BubbleSelectionRef.current, size, rawData);
-        }
-      });
-    }
-  }, [rawData]);
-
   useEffect(() => {
     function handleResize() {
       if (
         null !== svgWrapperRef.current &&
         null != d3BubbleSelectionRef.current
       ) {
-        const newSize = Math.min(
-          svgWrapperRef.current.clientWidth,
-          svgWrapperRef.current.clientHeight
-        );
+        const newSize = getSvgWrapperSize(svgWrapperRef.current);
 
         resizeD3ViewportAndBubbles(d3BubbleSelectionRef.current, newSize);
       }
@@ -80,6 +68,32 @@ const BubbleDonutChart: FunctionComponent<BubbleDonutChartProps> = ({
     return () => {
       window.removeEventListener("resize", handleResize);
     };
+  }, [rawData]);
+
+  useEffect(() => {
+    workerRef.current = new BubbleDonutWorker();
+
+    workerRef.current.addEventListener('message', (event: MessageEvent) => {
+      if (d3BubbleSelectionRef.current && svgWrapperRef.current) {
+        const {bubbles, groupCount} = event.data;
+        const size = getSvgWrapperSize(svgWrapperRef.current);
+
+        layoutBubbles(d3BubbleSelectionRef.current, size, bubbles, groupCount);
+      }
+    });
+
+    return () => {
+      if (workerRef.current) {
+        workerRef.current.terminate();
+      }
+    }
+  }, []);
+
+  /* Bubbles need to layout on every changes */
+  useEffect(() => {
+    if (workerRef.current) {
+      workerRef.current.postMessage(rawData);
+    }
   }, [rawData]);
 
   return (

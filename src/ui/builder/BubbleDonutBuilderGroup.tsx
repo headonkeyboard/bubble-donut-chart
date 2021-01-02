@@ -34,7 +34,7 @@ const BubbleDonutBuilderGroup: FunctionComponent<BubbleDonutBuilderGroupProps> =
       <div className="flex space-x-4 items-center">
         <label
           htmlFor={`group_${index}`}
-          className="flex items-center space-x-2"
+          className="flex flex-shrink-0 items-center space-x-2"
         >
           <span
             className="block flex-shrink-0 w-3 h-3 rounded-full"

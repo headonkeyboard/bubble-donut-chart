@@ -1,0 +1,22 @@
+[
+  {
+    "id": "1",
+    "group": "group 1",
+    "weight": 10
+  },
+  {
+    "id": "2",
+    "group": "group 1",
+    "weight": 10
+  },
+  {
+    "id": "3",
+    "group": "group 2",
+    "weight": 10
+  },
+  {
+    "id": "4",
+    "group": "group 2",
+    "weight": 10
+  }
+]

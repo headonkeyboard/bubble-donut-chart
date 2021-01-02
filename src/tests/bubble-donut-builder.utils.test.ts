@@ -1,5 +1,5 @@
 import React from "react";
-import { newGroupSize, updatedGroupsSize } from "./bubble-donut-builder.utils";
+import { newGroupSize, updatedGroupsSize } from "../ui/builder/utils/bubble-donut-builder.utils";
 
 const INITIAL_GROUPS_SIZE = [25, 70, 42, 24, 54];
 

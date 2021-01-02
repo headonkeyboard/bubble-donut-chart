@@ -1,17 +1,11 @@
 import React from "react";
 import {
   createD3SvgRoot,
-  layoutBubbles,
+  layoutBubbles, rawDataToBubbleDonut,
   resizeD3ViewportAndBubbles,
-} from "./bubble-donut-d3-layout.utils";
-import { BubbleWithCoordsAndRadius, RawData } from "../../../lib/core/models";
-
-const data: RawData[] = [
-  { id: "1", group: "group 1", weight: 10 },
-  { id: "2", group: "group 1", weight: 10 },
-  { id: "3", group: "group 2", weight: 10 },
-  { id: "4", group: "group 2", weight: 10 },
-];
+} from "../ui/bubble-donut-chart/utils/bubble-donut-d3-layout.utils";
+import {BubbleWithCoordsAndRadius} from "../lib/core/models";
+import dataSample from "./fixtures/data-sample.json";
 
 const SVG_ROOT_SIZE = 200;
 
@@ -24,6 +18,10 @@ let selection!: d3.Selection<
 >;
 
 describe("bubble donut d3 layout utils", () => {
+  const bubbleDonut = rawDataToBubbleDonut(dataSample);
+  const bubbles = bubbleDonut.getBubbles();
+  const groupCount = bubbleDonut.sections.size;
+
   beforeEach(() => {
     wrapper = document.createElement("div");
     selection = createD3SvgRoot(wrapper, SVG_ROOT_SIZE);
@@ -34,10 +32,10 @@ describe("bubble donut d3 layout utils", () => {
   });
 
   test("layoutBubbles", () => {
-    layoutBubbles(selection, SVG_ROOT_SIZE, data);
+    layoutBubbles(selection, SVG_ROOT_SIZE, bubbles, groupCount);
 
     const selectionNodeChildren = selection.node()?.children;
-    expect(selectionNodeChildren?.length).toBe(data.length);
+    expect(selectionNodeChildren?.length).toBe(dataSample.length);
 
     for (let i = 0; i < selectionNodeChildren.length; i++) {
       const child = selectionNodeChildren.item(i);
@@ -53,7 +51,7 @@ describe("bubble donut d3 layout utils", () => {
   test("resizeD3ViewportAndBubbles should resize svg root element and circles children", (done) => {
     const RESIZE_RATIO = 2;
 
-    layoutBubbles(selection, SVG_ROOT_SIZE, data);
+    layoutBubbles(selection, SVG_ROOT_SIZE, bubbles, groupCount);
 
     type Circle = {
       r: number;

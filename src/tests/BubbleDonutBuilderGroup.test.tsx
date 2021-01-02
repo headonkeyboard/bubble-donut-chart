@@ -1,7 +1,7 @@
 import React from "react";
 import renderer from "react-test-renderer";
 import { fireEvent, render } from "@testing-library/react";
-import BubbleDonutBuilderGroup from "./BubbleDonutBuilderGroup";
+import BubbleDonutBuilderGroup from "../ui/builder/BubbleDonutBuilderGroup";
 
 describe("BubbleDonutBuilderGroup", () => {
   test("BubbleDonutBuilderGroup should display a slider input with a label", () => {

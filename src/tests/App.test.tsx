@@ -1,6 +1,7 @@
 import React from "react";
+import "./helpers/mock-bubble-donut-worker";
 import { act, render } from "@testing-library/react";
-import App from "./App";
+import App from "../App";
 
 describe("App", () => {
   let container: Element;

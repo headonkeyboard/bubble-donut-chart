@@ -14,6 +14,7 @@ exports[`BubbleDonutBuilder BubbleDonutBuilder should display a BubbleDonutBuild
         className="flex space-x-4"
       >
         <label
+          className="whitespace-nowrap"
           htmlFor="bubble_count"
         >
           Bubble Count
@@ -22,7 +23,7 @@ exports[`BubbleDonutBuilder BubbleDonutBuilder should display a BubbleDonutBuild
           className="flex-1"
           defaultValue={150}
           id="bubble_count"
-          max="1000"
+          max="2000"
           min="25"
           name="bubble_count"
           onChange={[Function]}
@@ -46,7 +47,7 @@ exports[`BubbleDonutBuilder BubbleDonutBuilder should display a BubbleDonutBuild
               className="flex space-x-4 items-center"
             >
               <label
-                className="flex items-center space-x-2"
+                className="flex flex-shrink-0 items-center space-x-2"
                 htmlFor="group_0"
               >
                 <span
@@ -89,7 +90,7 @@ exports[`BubbleDonutBuilder BubbleDonutBuilder should display a BubbleDonutBuild
               className="flex space-x-4 items-center"
             >
               <label
-                className="flex items-center space-x-2"
+                className="flex flex-shrink-0 items-center space-x-2"
                 htmlFor="group_1"
               >
                 <span
@@ -132,7 +133,7 @@ exports[`BubbleDonutBuilder BubbleDonutBuilder should display a BubbleDonutBuild
               className="flex space-x-4 items-center"
             >
               <label
-                className="flex items-center space-x-2"
+                className="flex flex-shrink-0 items-center space-x-2"
                 htmlFor="group_2"
               >
                 <span
@@ -175,7 +176,7 @@ exports[`BubbleDonutBuilder BubbleDonutBuilder should display a BubbleDonutBuild
               className="flex space-x-4 items-center"
             >
               <label
-                className="flex items-center space-x-2"
+                className="flex flex-shrink-0 items-center space-x-2"
                 htmlFor="group_3"
               >
                 <span
@@ -218,7 +219,7 @@ exports[`BubbleDonutBuilder BubbleDonutBuilder should display a BubbleDonutBuild
               className="flex space-x-4 items-center"
             >
               <label
-                className="flex items-center space-x-2"
+                className="flex flex-shrink-0 items-center space-x-2"
                 htmlFor="group_4"
               >
                 <span

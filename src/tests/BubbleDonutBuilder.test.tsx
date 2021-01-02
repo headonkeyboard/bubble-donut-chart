@@ -1,7 +1,7 @@
 import React from "react";
 import renderer from "react-test-renderer";
 import { fireEvent, render } from "@testing-library/react";
-import BubbleDonutBuilder from "./BubbleDonutBuilder";
+import BubbleDonutBuilder from "../ui/builder/BubbleDonutBuilder";
 
 const INITIAL_GROUPS_SIZE = [25, 70, 42, 24, 54];
 

@@ -60,7 +60,7 @@ const BubbleDonutBuilder: FunctionComponent<BubbleDonutBuilderProps> = ({
       <div className="space-y-4">
         <Card>
           <div className="flex space-x-4">
-            <label htmlFor="bubble_count">Bubble Count</label>
+            <label className="whitespace-nowrap" htmlFor="bubble_count">Bubble Count</label>
             <input
               onChange={handleBubbleCountChange}
               className="flex-1"
@@ -69,7 +69,7 @@ const BubbleDonutBuilder: FunctionComponent<BubbleDonutBuilderProps> = ({
               type="range"
               defaultValue={defaultBubbleCount}
               min="25"
-              max="1000"
+              max="2000"
             />
           </div>
         </Card>

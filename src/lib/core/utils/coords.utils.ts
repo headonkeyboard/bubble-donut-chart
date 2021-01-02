@@ -16,19 +16,22 @@ const getDistance = (
 };
 
 /**
- * Returns the min distance between a list of points (edges Param) and point
+ * Returns the min distance between a list of points and a starting point
  *
  * @param points Array of positions in pixels
  * @param point The starting position in pixels
  */
-const getMinDistance = (points: Point[], point: Required<Point>) => {
-  const edgesDistances = points.reduce((acc: Array<number>, edge) => {
-    acc.push(getDistance(edge, point));
+const getMinDistance = (points: Point[], point: Required<Point>): number => {
+  let minDistance = getDistance(points[0], point);
 
-    return acc;
-  }, []);
+  for (let i = 1; i < points.length; i++) {
+    const distance = getDistance(points[i], point);
+    if (distance < minDistance) {
+      minDistance = distance;
+    }
+  }
 
-  return Math.min(...edgesDistances);
+  return minDistance;
 };
 
 /**
