@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15ed4c6c-dc7f-4fe7-8c26-83591f3c232f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/bubble-donut-chart/utils/bubble-donut-d3-layout.utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/bubble-donut-chart/utils/bubble-donut-d3-layout.utils.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarIssues.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarIssues.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,14 +58,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ui/bubble-donut-chart/utils/bubble-donut-d3-layout.utils.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
+            <state relative-caret-position="-186">
               <caret line="58" column="17" selection-start-line="58" selection-start-column="17" selection-end-line="58" selection-end-column="17" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -129,7 +139,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/BubbleDonutBuilder.tsx" />
         <option value="$PROJECT_DIR$/src/d3js/colors.utils.ts" />
         <option value="$PROJECT_DIR$/src/ui/models.ts" />
         <option value="$PROJECT_DIR$/src/App.css" />
@@ -180,6 +189,7 @@
         <option value="$PROJECT_DIR$/src/tests/bubble-donut-d3-layout.utils.test.ts" />
         <option value="$PROJECT_DIR$/src/utils/random.utils.ts" />
         <option value="$PROJECT_DIR$/src/ui/bubble-donut-chart/utils/bubble-donut-d3-layout.utils.ts" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -364,7 +374,7 @@
       <workItem from="1608815149759" duration="6685000" />
       <workItem from="1608977481815" duration="100419000" />
       <workItem from="1609507822855" duration="2000" />
-      <workItem from="1609600138275" duration="7681000" />
+      <workItem from="1609600138275" duration="7803000" />
     </task>
     <servers />
   </component>
@@ -401,7 +411,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="114787000" />
+    <option name="totallyTimeSpent" value="114909000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="5" y="23" width="1920" height="1177" extended-state="6" />
@@ -513,9 +523,6 @@
           <caret line="9" column="40" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/bubble-donut-chart/constants.ts">
       <provider selected="true" editor-type-id="text-editor">
@@ -775,11 +782,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/bubble-donut-chart/utils/bubble-donut-d3-layout.utils.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
+        <state relative-caret-position="-186">
           <caret line="58" column="17" selection-start-line="58" selection-start-column="17" selection-end-line="58" selection-end-column="17" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
         </state>
       </provider>
     </entry>
