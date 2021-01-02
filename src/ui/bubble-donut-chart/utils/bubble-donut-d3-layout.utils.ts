@@ -35,7 +35,8 @@ const viewportScaleRange = (width: number) => {
  *
  * @param selection
  * @param width
- * @param data
+ * @param bubbles
+ * @param groupCount
  */
 export function layoutBubbles(
   selection: D3SVGSelection,
@@ -48,7 +49,18 @@ export function layoutBubbles(
   const viewportScale = viewportScaleRange(width);
   const d3BubbleSelection = selection
     .selectAll<SVGCircleElement, BubbleWithCoordsAndRadius>("circle")
-    .data(d3Bubbles, (d) => (d as BubbleWithCoordsAndRadius).id);
+    .data(d3Bubbles, d => `${d.id}-${d.group}`)
+  ;
+
+  // makes bubbles moving to random position before removing theme (looks like an explosion)
+  d3BubbleSelection
+      .exit()
+      .transition()
+      .duration(900)
+      .attr("cx", () => getRandomInt(0, width))
+      .attr("cy", () => getRandomInt(0, width))
+      .attr("r", 0)
+      .remove();
 
   d3BubbleSelection
     .enter()
@@ -61,22 +73,13 @@ export function layoutBubbles(
     .attr("fill", (d) => groupsColors(d.group) as string)
     .merge(d3BubbleSelection)
     .transition()
-    .duration(800)
+    .delay(150)
+    .duration(400)
     .attr("cx", (d) => viewportScale(d.x + DONUT_CENTER))
     .attr("cy", (d) => viewportScale(d.y + DONUT_CENTER))
     .attr("r", (d) => viewportScale(d.r))
     .attr("opacity", 1)
     .attr("fill", (d) => groupsColors(d.group) as string);
-
-  // makes bubbles moving to random position before removing theme (looks like an explosion)
-  d3BubbleSelection
-    .exit()
-    .transition()
-    .duration(400)
-    .attr("cx", () => getRandomInt(0, width))
-    .attr("cy", () => getRandomInt(0, width))
-    .attr("r", 0)
-    .remove();
 }
 
 /**
