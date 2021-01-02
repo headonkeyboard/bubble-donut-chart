@@ -23,8 +23,10 @@ const getBubbleRadius = (
   donutArea: number,
   totalBubbleValues: number
 ): number => {
-  const bubbleArea = (bubbleValue * donutArea) / totalBubbleValues;
-  return Math.sqrt(bubbleArea / Math.PI) * 0.7;
+  if (bubbleValue <= 0) return 1;
+
+  const bubbleArea = (bubbleValue * donutArea * 0.5) / totalBubbleValues;
+  return Math.max(Math.sqrt(bubbleArea / Math.PI), 1);
 };
 
 /**
